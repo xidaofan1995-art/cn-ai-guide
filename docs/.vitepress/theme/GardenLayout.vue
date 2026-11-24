@@ -28,11 +28,17 @@ const stage = computed(() => {
         <GrowthBadge :stage="stage" meter />
       </div>
     </template>
+    <template #doc-after>
+      <div v-if="stage" class="garden-doc-feedback">
+        <span>发现有误，或希望这里多讲一步？</span>
+        <a :href="withBase('/feedback/')">去留言板提建议 <span aria-hidden="true">→</span></a>
+      </div>
+    </template>
     <template #layout-bottom>
       <footer class="garden-footer">
         <div class="garden-wrap garden-footer-inner">
           <span>国产AI实战指南 · 免费内容全站公开</span>
-          <span><a :href="withBase('/news/')">AI 资讯</a> · <a :href="withBase('/about/')">关于我们</a></span>
+          <span><a :href="withBase('/news/')">AI 资讯</a> · <a :href="withBase('/feedback/')">留言板</a> · <a :href="withBase('/about/')">关于我们</a></span>
         </div>
       </footer>
     </template>

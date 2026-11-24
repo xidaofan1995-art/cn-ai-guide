@@ -13,6 +13,7 @@ export default defineConfig({
       { text: '模型图鉴', link: '/models/', activeMatch: '^/(models|compare)/' },
       { text: '办公实战', link: '/scenarios/', activeMatch: '^/scenarios/' },
       { text: 'AI 资讯', link: '/news/', activeMatch: '^/news/' },
+      { text: '留言板', link: '/feedback/', activeMatch: '^/feedback/' },
       { text: '关于我们', link: '/about/', activeMatch: '^/about/' }
     ],
     sidebar: {

@@ -42,4 +42,6 @@ import { withBase } from 'vitepress'
 
 如果你正好有一个要做的任务，可以从[办公实战](../scenarios/index.md)开始。第一次上手可以走[入门苗圃](../start/index.md)，想了解工具变化可以看[AI 资讯](../news/index.md)。
 
+如果你有想看的教程，或在跟做时遇到卡点，欢迎到[留言板](../feedback/index.md)说说。我会定期查看留言并维护站点。
+
 本文配图为 AI 生成的工作场景示意。

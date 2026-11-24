@@ -1,0 +1,24 @@
+body:
+  - type: dropdown
+    id: topic
+    attributes:
+      label: 建议类型
+      options:
+        - 网站体验
+        - 教程选题或内容补充
+        - 纠错与更新
+        - 其他建议
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 你的想法
+      description: 可以写你遇到的问题，以及希望我们补充或改进什么。留言会公开，请隐去个人信息和公司内部资料。
+      placeholder: 我在手机上看办公实战时，需要翻几屏才能找到 PPT 教程。希望目录能直接跳到对应教程。
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: 相关页面链接（选填）
