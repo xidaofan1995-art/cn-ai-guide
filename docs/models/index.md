@@ -8,6 +8,8 @@
 
 ## 模型详解 {#profiles}
 
+![两款工具的网页入口与本站周报实测的本地公开权重版本](/images/model-entrances.webp)
+
 | 工具 | 推荐的第一项练习 |
 |---|---|
 | [DeepSeek](./deepseek.md) | 从零散记录提取周报关键事实 |

@@ -7,8 +7,7 @@ import { maturity, type Maturity } from './maturity'
 const filters = [
   { id: 'all', label: '全部' },
   { id: 'new', label: '新手' },
-  { id: 'work', label: '办公实战' },
-  { id: 'boss', label: '老板' }
+  { id: 'work', label: '办公实战' }
 ] as const
 
 type Filter = typeof filters[number]['id']
@@ -24,16 +23,17 @@ interface Card {
   wide?: boolean
   count?: string
   action?: string
+  visual?: { file: string; alt: string }
 }
 
 const cards: Card[] = [
   { id: 'path', category: 'new', eyebrow: '新手苗圃 · 推荐起点', title: '零基础 7 天上手路径', text: '从选工具到核对结果，用已有的免费教程练习每天会遇到的工作。', url: '/start/', stage: 'seed', tint: 'green', wide: true, count: '7 篇', action: '开始种' },
   { id: 'models', category: 'work', eyebrow: '模型图鉴', title: '2026 国产大模型怎么选', text: '按工作任务挑入口，再用同一份素材检查产出。', url: '/models/', stage: 'seed', count: '2 篇', action: '看图鉴' },
-  { id: 'small-business', category: 'boss', eyebrow: '老板专栏', title: '小老板降本三板斧', text: '从客服话术、营销文案、周报汇总中选一个重复任务，记录实际改稿成本。', url: '/owners/#three-plays', stage: 'seed', tint: 'blue' },
+  { id: 'writing', category: 'work', eyebrow: '办公实战', title: '写一封展会客户跟进邮件', text: '把会面记录变成英文邮件，问清图纸、材料和试制数量。', url: '/scenarios/writing.html', stage: 'sprout', count: '1 篇' },
   { id: 'excel', category: 'work', eyebrow: '办公实战', title: 'Excel 表格 + AI 提效', text: '用一份小表练习筛选、求和和复核公式。', url: '/scenarios/excel.html', stage: 'seed', count: '1 篇' },
   { id: 'review', category: 'new', eyebrow: '避坑手册', title: 'AI 幻觉：别把错话发给客户', text: '看周报初稿如何出现无依据的完成率，再逐条回到原始记录。', url: '/scenarios/weekly-report.html#快速识别一处常见误写', stage: 'sprout', count: '1 篇' },
-  { id: 'slides', category: 'work', eyebrow: '办公实战', title: 'PPT 大纲与讲稿一条龙', text: '从业务记录做成 5 页可编辑汇报，核对每页结论，再准备开场讲稿。', url: '/scenarios/slides.html', stage: 'sprout', tint: 'green', wide: true, count: '1 篇' },
-  { id: 'team', category: 'boss', eyebrow: '老板专栏', title: '给团队定 AI 使用规范', text: '将数据范围、人工复核和对外发布责任写进一页团队约定。', url: '/owners/#team-rules', stage: 'seed', tint: 'blue', wide: true }
+  { id: 'slides', category: 'work', eyebrow: '办公实战', title: 'PPT 大纲与讲稿一条龙', text: '从业务记录做成 5 页可编辑汇报，核对每页结论，再准备开场讲稿。', url: '/scenarios/slides.html', stage: 'sprout', wide: true, count: '1 篇', visual: { file: 'slides-outline.webp', alt: '五页业务汇报的内容结构，从展会进度到负责人待确认事项' } },
+  { id: 'weekly', category: 'work', eyebrow: '办公实战', title: '把零散记录写成一页周报', text: '对照原始记录和 AI 初稿，把待确认、已完成和下周行动分清。', url: '/scenarios/weekly-report.html', stage: 'sprout', wide: true, count: '1 篇', visual: { file: 'weekly-correction.webp', alt: '周报改稿对照，原始记录、模型误写和人工审阅共三栏' } }
 ]
 
 const selected = ref<Filter>('all')
@@ -136,6 +136,7 @@ const updates = [
           <span class="garden-card-eyebrow">{{ card.eyebrow }}</span>
           <h3>{{ card.title }}</h3>
           <p>{{ card.text }}</p>
+          <img v-if="card.visual" class="garden-card-visual" :src="withBase('/images/' + card.visual.file)" :alt="card.visual.alt" width="1080" height="570" loading="lazy">
 
           <template v-if="card.id === 'path'">
             <ol class="garden-steps">
@@ -168,7 +169,7 @@ const updates = [
     <section class="garden-updates" aria-labelledby="garden-update-title">
       <div class="garden-section-head">
         <div><h2 id="garden-update-title">花园最近在忙什么</h2><p>每次模型大版本更新，相关教程会回访修订。</p></div>
-        <a :href="withBase('/news/')">全部更新 <span aria-hidden="true">→</span></a>
+        <a :href="withBase('/news/')">查看 AI 资讯 <span aria-hidden="true">→</span></a>
       </div>
       <ul class="garden-update-list">
         <li v-for="item in updates" :key="item.link">

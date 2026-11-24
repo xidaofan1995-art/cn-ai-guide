@@ -546,6 +546,15 @@
   line-height: 1.8;
 }
 
+.garden-card-visual {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 12px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+}
+
 .garden-steps {
   display: grid;
   gap: 13px;
@@ -697,6 +706,35 @@
   gap: 10px;
 }
 
+.guide-about-photo {
+  margin: 20px 0 28px;
+}
+
+.guide-about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.guide-about-photo figcaption {
+  margin-top: 7px;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.guide-about-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0 28px;
+}
+
+.guide-about-gallery .guide-about-photo {
+  margin: 0;
+}
+
 .garden-home :is(a, button):focus-visible,
 .garden-nav-cta:focus-visible {
   outline: 2px solid var(--vp-c-brand-1);
@@ -774,6 +812,11 @@
 
   .garden-wide {
     grid-column: auto;
+  }
+
+  .guide-about-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
   }
 
   .garden-plot {

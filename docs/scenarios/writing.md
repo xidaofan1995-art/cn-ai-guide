@@ -23,6 +23,8 @@ maturity: sprout
 
 ## 准备材料
 
+![跟进邮件的三段结构：回顾会面、询问规格、约定工程评审后的下一步](/images/email-structure.webp)
+
 用[练习简报](/practice/copywriting-brief.txt)先跑一遍。自己使用时，把你确认过的会面背景、客户问了什么、你希望对方下一步做什么分开写。真实业务资料应按公司的规则处理。
 
 ## 跟着做

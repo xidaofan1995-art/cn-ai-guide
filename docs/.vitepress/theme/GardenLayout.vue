@@ -31,8 +31,8 @@ const stage = computed(() => {
     <template #layout-bottom>
       <footer class="garden-footer">
         <div class="garden-wrap garden-footer-inner">
-          <span>国产AI实战指南 · 免费内容全站公开 · <a :href="withBase('/owners/#courses')">付费课程见专栏页</a></span>
-          <span>由 VitePress 驱动 · 计划每周二／五更新</span>
+          <span>国产AI实战指南 · 免费内容全站公开</span>
+          <span><a :href="withBase('/news/')">AI 资讯</a> · <a :href="withBase('/about/')">关于我们</a></span>
         </div>
       </footer>
     </template>

@@ -14,6 +14,8 @@ const exampleFile = withBase('/practice/exhibition-briefing-example.pptx')
 
 ## 先看成品
 
+![五页汇报结构，依次说明进展、触达、待确认、下周行动与决策事项](/images/slides-outline.webp)
+
 | 页 | 推荐标题 | 页面要回答的问题 |
 |---|---|---|
 | 1 | 展会线索跟进进度 | 已发 4 封首轮邮件，当前有哪两项待确认？ |

@@ -12,8 +12,8 @@ export default defineConfig({
       { text: '入门苗圃', link: '/start/', activeMatch: '^/start/' },
       { text: '模型图鉴', link: '/models/', activeMatch: '^/(models|compare)/' },
       { text: '办公实战', link: '/scenarios/', activeMatch: '^/scenarios/' },
-      { text: '老板专栏', link: '/owners/', activeMatch: '^/owners/' },
-      { text: '更新日志', link: '/news/', activeMatch: '^/news/' }
+      { text: 'AI 资讯', link: '/news/', activeMatch: '^/news/' },
+      { text: '关于我们', link: '/about/', activeMatch: '^/about/' }
     ],
     sidebar: {
       '/models/': [
@@ -50,7 +50,7 @@ export default defineConfig({
       ],
       '/news/': [
         {
-          text: '每周资讯',
+          text: 'AI 资讯',
           items: [
             { text: '第 01 期', link: '/news/2026-11-24' },
             { text: '往期资讯', link: '/news/#archive' }
