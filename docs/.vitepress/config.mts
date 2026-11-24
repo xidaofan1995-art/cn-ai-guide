@@ -20,7 +20,8 @@ export default defineConfig({
           text: '模型百科',
           items: [
             { text: '总览', link: '/models/' },
-            { text: 'DeepSeek', link: '/models/deepseek' }
+            { text: 'DeepSeek', link: '/models/deepseek' },
+            { text: '通义千问', link: '/models/qwen' }
           ]
         }
       ],
@@ -29,9 +30,9 @@ export default defineConfig({
           text: '办公实战',
           items: [
             { text: '教程总览', link: '/scenarios/' },
-            { text: '写文案', link: '/scenarios/#writing' },
-            { text: '做 PPT', link: '/scenarios/#slides' },
-            { text: '写周报', link: '/scenarios/#weekly-report' }
+            { text: '写文案', link: '/scenarios/writing' },
+            { text: '做 PPT', link: '/scenarios/slides' },
+            { text: '写周报', link: '/scenarios/weekly-report' }
           ]
         }
       ],
@@ -40,7 +41,7 @@ export default defineConfig({
           text: '工具对比',
           items: [
             { text: '按任务查看', link: '/compare/#by-task' },
-            { text: '实测记录', link: '/compare/#results' }
+            { text: '周报同题对比', link: '/compare/weekly-report' }
           ]
         }
       ],
@@ -48,7 +49,7 @@ export default defineConfig({
         {
           text: '每周资讯',
           items: [
-            { text: '本周动态', link: '/news/#this-week' },
+            { text: '第 01 期', link: '/news/2026-11-24' },
             { text: '往期资讯', link: '/news/#archive' }
           ]
         }

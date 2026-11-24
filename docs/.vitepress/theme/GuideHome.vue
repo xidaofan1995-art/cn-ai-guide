@@ -61,7 +61,7 @@ function openSearch() {
         <h2 id="guide-tasks-heading">选一个任务</h2>
         <ul class="guide-task-list">
           <li v-for="task in tasks" :key="task.link">
-            <a :href="withBase('/scenarios/#' + task.link)">
+            <a :href="withBase('/scenarios/' + task.link + '.html')">
               <img :src="withBase('/images/' + task.image + '.webp')" alt="" width="640" height="426">
               <span class="guide-item-text">
                 <strong>{{ task.title }}</strong>

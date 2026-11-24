@@ -4,10 +4,10 @@
 
 ## 按任务查看 {#by-task}
 
-- [写文案](../scenarios/index.md#writing)
-- [做 PPT](../scenarios/index.md#slides)
-- [写周报](../scenarios/index.md#weekly-report)
+- [写文案教程](../scenarios/writing.md)
+- [做 PPT 教程](../scenarios/slides.md)
+- [同一份工作记录生成周报](./weekly-report.md)
 
 ## 实测记录 {#results}
 
-首批实测结果整理中。
+[首篇周报同题对比](./weekly-report.md)提供输入、测试环境、原始回答和编辑评审，方便自行复测。

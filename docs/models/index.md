@@ -4,8 +4,13 @@
 
 ## 模型总览 {#overview}
 
-首批整理 DeepSeek、通义千问、豆包、Kimi、元宝和 WorkBuddy。
+首批整理 DeepSeek、通义千问、豆包、Kimi、元宝和 WorkBuddy。详情从教程使用和同题测试中的工具优先补充。
 
 ## 模型详解 {#profiles}
 
-- [DeepSeek](./deepseek.md)
+| 工具 | 推荐的第一项练习 |
+|---|---|
+| [DeepSeek](./deepseek.md) | 从零散记录提取周报关键事实 |
+| [通义千问](./qwen.md) | 用同一份素材练习周报，再整理演示大纲 |
+
+豆包、Kimi、元宝和 WorkBuddy 的详情待整理。
