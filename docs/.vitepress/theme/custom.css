@@ -751,14 +751,47 @@
   text-underline-offset: 3px;
 }
 
+.guide-feedback-page .VPDoc {
+  padding-inline: clamp(14px, 3vw, 34px);
+}
+
+.guide-feedback-page .VPDoc:not(.has-sidebar) .content {
+  max-width: 100%;
+  padding-bottom: 72px;
+}
+
+.guide-feedback-intro {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 4px 12px 0;
+  text-align: center;
+}
+
+.vp-doc .guide-feedback-intro h1 {
+  font-size: clamp(34px, 5vw, 55px);
+  line-height: 1.21;
+}
+
+.vp-doc .guide-feedback-intro p {
+  margin: 13px 0 0;
+  color: var(--vp-c-text-2);
+  line-height: 1.8;
+}
+
+.guide-feedback-details {
+  max-width: 760px;
+  margin: 52px auto 0;
+}
+
 .guide-feedback-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
-  margin: 22px 0 12px;
+  margin: 12px 0 9px;
 }
 
-.vp-doc .guide-feedback-actions a {
+.vp-doc .guide-feedback-actions :is(a, button) {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -771,12 +804,12 @@
   text-decoration: none;
 }
 
-.vp-doc .guide-feedback-actions a:first-child {
+.vp-doc .guide-feedback-actions .guide-feedback-write {
   background: var(--garden-orange);
   border-color: var(--garden-orange);
 }
 
-.vp-doc .guide-feedback-actions a:hover {
+.vp-doc .guide-feedback-actions :is(a, button):hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }

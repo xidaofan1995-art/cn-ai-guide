@@ -1,17 +1,25 @@
 ---
+aside: false
+pageClass: guide-feedback-page
+lastUpdated: false
 description: 提出网站建议、推荐教程选题，或分享你在工作中用 AI 的经验。
 ---
 
-# 留言板
+<script setup>
+import FeedbackTree from '../.vitepress/theme/FeedbackTree.vue'
+</script>
 
-页面哪里不顺手？有什么工作想学着用 AI 做？欢迎把建议或实际用法留在这里，也可以接着别人的话题交流。
+<div class="guide-feedback-intro">
 
-<div class="guide-feedback-actions">
-  <a href="https://github.com/xidaofan1995-art/cn-ai-guide/discussions/new?category=ideas">写一条建议 <span aria-hidden="true">↗</span></a>
-  <a href="https://github.com/xidaofan1995-art/cn-ai-guide/discussions">浏览公开讨论 <span aria-hidden="true">↗</span></a>
+# 留言树
+
+挑一个空瓶，留下你想看的教程、遇到的卡点，或一个用 AI 解决的小问题。
+
 </div>
 
-<p class="guide-feedback-access">留言和回复公开可见。发帖或回复需要 GitHub 账号。</p>
+<FeedbackTree />
+
+<div class="guide-feedback-details">
 
 ## 可以聊些什么
 
@@ -35,3 +43,5 @@ description: 提出网站建议、推荐教程选题，或分享你在工作中�
 我是 Simon，我会定期看留言。采纳的建议会在原帖回复，相关内容更新后也会补上链接，方便后来遇到同样问题的人找到答案。
 
 分享截图和案例前，请隐去姓名、联系方式和公司内部资料。
+
+</div>
