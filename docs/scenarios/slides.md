@@ -1,3 +1,7 @@
+---
+maturity: sprout
+---
+
 <script setup>
 import { withBase } from 'vitepress'
 
@@ -54,6 +58,12 @@ const exampleFile = withBase('/practice/exhibition-briefing-example.pptx')
 ![WPS 官方文档生成 PPT 的操作截图](https://wps-kf-static.wpscdn.com/knowledge/md-images/2026/09/29/b27e40069d4e42119af84b3aff322c09.png)
 
 [图片及操作来源｜WPS 服务中心](https://help.wps.cn/c/docs-ksrm/2104741990159208449)
+
+## 根据大纲准备开场讲稿
+
+把审核后的第一页交给 AI，请它按「结论、目前卡点、需要决定的两件事」写三句话。数字、日期和范围保持与页稿一致。
+
+> 本周有 4 条优先线索已发首轮邮件，剩下 1 条缺邮箱。资料包已出初稿，供应商交期仍待确认。今天请大家一起决定补查邮箱和跟进交期的优先级。
 
 ## 交付前检查
 

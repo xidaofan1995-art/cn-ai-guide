@@ -5,14 +5,15 @@ export default defineConfig({
   title: '国产AI实战指南',
   description: '面向职场人和中小老板的国产大模型实战知识库',
   base: '/cn-ai-guide/',
+  appearance: false,
   lastUpdated: true,
   themeConfig: {
     nav: [
-      { text: '首页', link: '/' },
-      { text: '模型百科', link: '/models/', activeMatch: '^/models/' },
-      { text: '场景教程', link: '/scenarios/', activeMatch: '^/scenarios/' },
-      { text: '工具对比', link: '/compare/', activeMatch: '^/compare/' },
-      { text: '每周资讯', link: '/news/', activeMatch: '^/news/' }
+      { text: '入门苗圃', link: '/start/', activeMatch: '^/start/' },
+      { text: '模型图鉴', link: '/models/', activeMatch: '^/(models|compare)/' },
+      { text: '办公实战', link: '/scenarios/', activeMatch: '^/scenarios/' },
+      { text: '老板专栏', link: '/owners/', activeMatch: '^/owners/' },
+      { text: '更新日志', link: '/news/', activeMatch: '^/news/' }
     ],
     sidebar: {
       '/models/': [
@@ -21,7 +22,8 @@ export default defineConfig({
           items: [
             { text: '总览', link: '/models/' },
             { text: 'DeepSeek', link: '/models/deepseek' },
-            { text: '通义千问', link: '/models/qwen' }
+            { text: '通义千问', link: '/models/qwen' },
+            { text: '工具对比', link: '/compare/' }
           ]
         }
       ],
@@ -32,7 +34,8 @@ export default defineConfig({
             { text: '教程总览', link: '/scenarios/' },
             { text: '写文案', link: '/scenarios/writing' },
             { text: '做 PPT', link: '/scenarios/slides' },
-            { text: '写周报', link: '/scenarios/weekly-report' }
+            { text: '写周报', link: '/scenarios/weekly-report' },
+            { text: 'Excel 表格', link: '/scenarios/excel' }
           ]
         }
       ],
@@ -72,12 +75,8 @@ export default defineConfig({
         }
       }
     },
-    outline: { label: '本页目录' },
+    outline: { label: '本页目录', level: [2, 3] },
     docFooter: { prev: '上一篇', next: '下一篇' },
-    lastUpdatedText: '最后更新',
-    footer: {
-      message: '免费内容持续更新 · 进阶课程请关注公众号',
-      copyright: '© 2026 国产AI实战指南'
-    }
+    lastUpdatedText: '最后更新'
   }
 })

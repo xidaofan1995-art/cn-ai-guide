@@ -1,4 +1,8 @@
 import DefaultTheme from 'vitepress/theme'
-import './guide.css'
+import GardenLayout from './GardenLayout.vue'
+import './custom.css'
 
-export default DefaultTheme
+export default {
+  extends: DefaultTheme,
+  Layout: GardenLayout
+}

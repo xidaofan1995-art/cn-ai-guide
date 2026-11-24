@@ -13,4 +13,6 @@
 | [DeepSeek](./deepseek.md) | 从零散记录提取周报关键事实 |
 | [通义千问](./qwen.md) | 用同一份素材练习周报，再整理演示大纲 |
 
-豆包、Kimi、元宝和 WorkBuddy 的详情待整理。
+## 待更新模型 {#upcoming}
+
+豆包、Kimi、元宝和 WorkBuddy 的详情待整理。首页苗圃中的成熟度和篇数是演示数据。
