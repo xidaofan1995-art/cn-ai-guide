@@ -37,8 +37,8 @@ const stage = computed(() => {
     <template #layout-bottom>
       <footer class="garden-footer">
         <div class="garden-wrap garden-footer-inner">
-          <span>{{ site.title }} · 免费内容全站公开</span>
-          <span><a :href="withBase('/news/')">AI 资讯</a> · <a :href="withBase('/feedback/')">留言板</a> · <a :href="withBase('/about/')">关于我们</a></span>
+          <span>{{ site.title }} · 教程与练习公开分享</span>
+          <span><a :href="withBase('/news/')">AI 资讯</a> · <a :href="withBase('/feedback/')">留言板</a> · <a :href="withBase('/about/')">关于网站</a></span>
         </div>
       </footer>
     </template>

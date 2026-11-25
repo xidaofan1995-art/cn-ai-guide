@@ -1,13 +1,13 @@
-# 工具对比
+# 模型能力对比
 
-同一任务下各家AI工具的实测对比，持续更新中。
+在相同任务和可记录的条件下，比较模型生成的内容。独立产品的端到端流程见[工具实测](../tools/index.md)。
 
 ## 按任务查看 {#by-task}
 
-- [写文案教程](../scenarios/writing.md)
-- [做 PPT 教程](../scenarios/slides.md)
 - [同一份工作记录生成周报](./weekly-report.md)
 
 ## 实测记录 {#results}
 
 [首篇周报同题对比](./weekly-report.md)提供输入、测试环境、原始回答和编辑评审，方便自行复测。
+
+想了解模型怎么被程序或智能体调用，可看[从大模型到 Agent](../basics/concepts.md)。

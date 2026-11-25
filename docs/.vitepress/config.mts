@@ -1,51 +1,68 @@
 import { defineConfig } from 'vitepress'
 
+const basicsSidebar = [
+  {
+    text: 'AI 基础',
+    items: [
+      { text: '基础知识地图', link: '/basics/' },
+      { text: '零基础 7 天练习', link: '/start/' },
+      { text: 'Token、API、Agent、CLI、MCP', link: '/basics/concepts' }
+    ]
+  },
+  {
+    text: '大模型',
+    items: [
+      { text: '模型与常用入口', link: '/models/' },
+      { text: 'DeepSeek', link: '/models/deepseek' },
+      { text: '通义千问', link: '/models/qwen' },
+      { text: '模型能力对比', link: '/compare/' },
+      { text: '周报同题对比', link: '/compare/weekly-report' }
+    ]
+  }
+]
+
 export default defineConfig({
   lang: 'zh-CN',
   title: '桔子哥的AI探索',
-  description: '面向职场人和中小老板的国产大模型实战知识库',
+  description: '从日常办公到中国制造出海，分享 AI 基础、国内外工具实测和可以复用的工作方法。',
   base: '/cn-ai-guide/',
   appearance: false,
   lastUpdated: true,
   themeConfig: {
     nav: [
-      { text: '入门苗圃', link: '/start/', activeMatch: '^/start/' },
-      { text: '模型图鉴', link: '/models/', activeMatch: '^/(models|compare)/' },
-      { text: '办公实战', link: '/scenarios/', activeMatch: '^/scenarios/' },
+      { text: 'AI 基础', link: '/basics/', activeMatch: '^/(basics|start|models|compare)/' },
+      { text: '工具实测', link: '/tools/', activeMatch: '^/tools/' },
+      { text: '实战案例', link: '/scenarios/', activeMatch: '^/scenarios/' },
       { text: 'AI 资讯', link: '/news/', activeMatch: '^/news/' },
       { text: '留言板', link: '/feedback/', activeMatch: '^/feedback/' },
-      { text: '关于我们', link: '/about/', activeMatch: '^/about/' }
+      { text: '关于网站', link: '/about/', activeMatch: '^/about/' }
     ],
     sidebar: {
-      '/models/': [
+      '/basics/': basicsSidebar,
+      '/models/': basicsSidebar,
+      '/start/': basicsSidebar,
+      '/compare/': basicsSidebar,
+      '/tools/': [
         {
-          text: '模型百科',
+          text: '工具实测',
           items: [
-            { text: '总览', link: '/models/' },
-            { text: 'DeepSeek', link: '/models/deepseek' },
-            { text: '通义千问', link: '/models/qwen' },
-            { text: '工具对比', link: '/compare/' }
+            { text: '实测目录', link: '/tools/' },
+            { text: '实测方法', link: '/tools/method' },
+            { text: '海关数据收集与整理', link: '/tools/trade-data' },
+            { text: '展会洞察', link: '/tools/exhibition' }
           ]
         }
       ],
       '/scenarios/': [
         {
-          text: '办公实战',
+          text: '实战案例',
           items: [
-            { text: '教程总览', link: '/scenarios/' },
+            { text: '案例总览', link: '/scenarios/' },
+            { text: '制造出海', link: '/scenarios/#export' },
             { text: '写文案', link: '/scenarios/writing' },
             { text: '做 PPT', link: '/scenarios/slides' },
             { text: '写周报', link: '/scenarios/weekly-report' },
             { text: 'Excel 表格', link: '/scenarios/excel' }
-          ]
-        }
-      ],
-      '/compare/': [
-        {
-          text: '工具对比',
-          items: [
-            { text: '按任务查看', link: '/compare/#by-task' },
-            { text: '周报同题对比', link: '/compare/weekly-report' }
           ]
         }
       ],

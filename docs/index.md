@@ -1,7 +1,7 @@
 ---
 layout: page
 lastUpdated: false
-description: 面向职场人和中小企业经营者的国产 AI 免费实战教程。
+description: 用 Token 做点有用的事。从日常办公到中国制造出海，分享 AI 基础、国内外工具实测和可以复用的工作方法。
 ---
 
 <script setup>

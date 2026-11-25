@@ -1,0 +1,31 @@
+---
+description: 用整理展会记录这一个工作场景，认识大模型、Token、API、Agent、CLI 和 MCP。
+maturity: seed
+---
+
+# 从大模型到 Agent
+
+假设你刚从展会回来，要把十份记录整理成一张跟进表。先看这些词分别对应哪一步。
+
+| 概念 | 它在做什么 | 展会记录例子 |
+|---|---|---|
+| 大模型 | 根据输入理解和生成内容 | 从记录里找出原话中的规格、日期和待办 |
+| Token | 模型处理文本时使用的单位 | 发给模型的记录、指令和回复都会占用一定的用量 |
+| API | 程序调用模型服务的接口 | 让脚本把每份记录发给模型，并接回结构化结果 |
+| Agent | 围绕目标分步骤调用工具并检查进度的应用 | 在已授权的目录读取文件、提取字段、标出缺项 |
+| CLI | 通过终端命令操作程序的界面 | 输入命令启动某个 Agent，或者从文件读取本次任务 |
+| MCP | AI 应用连接外部工具和数据的开放协议 | 让支持 MCP 的应用接入已授权的资料库 |
+
+## 模型和 Token {#token}
+
+不同模型对同一段文字的拆分方式可能不同。用 API 做批量任务时，可以先取一份有代表性的记录，查看接口返回的用量，再估算整批任务。以 [DeepSeek 的 Token 文档](https://api-docs.deepseek.com/zh-cn/quick_start/token_usage/)为例，实际用量可以在接口返回的 `usage` 字段里查看。
+
+## 什么时候用 API {#api}
+
+只有几条记录时，在对话框里先把字段和核对办法试清楚。任务重复发生、输入格式相对稳定时，再考虑用 API 批量调用。可以先从[周报的同题对比](../compare/weekly-report.md)看两个模型用同一份材料会在哪些地方给出不同答案。
+
+## Agent、CLI 和 MCP 怎么配合 {#agent}
+
+你可以在终端用 CLI 启动一个 Agent。Agent 负责安排步骤，可以通过应用已配置的 MCP 连接读取数据，再把模型提取出的字段汇总成草稿。这三样可以配合使用。手头只有一份表时，用网页对话也能先把流程跑清楚。
+
+试新工具时，可以只给它一份可公开的样例和需要的读取权限，把核对、保存和对外发信留给自己确认。想看实际界面和规范，可读 [Hermes 的 CLI 文档](https://hermes-agent.nousresearch.com/docs/user-guide/cli)和 [MCP 规范的介绍](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/docs/2026-07-28/getting-started/intro.mdx)。
