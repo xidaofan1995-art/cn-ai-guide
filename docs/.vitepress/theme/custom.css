@@ -70,6 +70,10 @@
   background: #FFFFFF;
 }
 
+.VPLocalSearchBox {
+  --vp-backdrop-bg-color: rgba(29,31,28,.22);
+}
+
 .VPSidebar {
   background: #FFFFFF;
   border-right: 1px solid var(--vp-c-divider);
