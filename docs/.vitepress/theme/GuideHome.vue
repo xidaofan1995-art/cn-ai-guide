@@ -30,8 +30,8 @@ interface Card {
 const cards: Card[] = [
   { id: 'path', category: 'new', eyebrow: 'AI 基础 · 入门苗圃', title: '零基础 7 天上手路径', text: '从选工具到核对结果，用公开教程练习每天会遇到的工作。', url: '/start/', stage: 'seed', tint: 'green', wide: true, action: '开始练习' },
   { id: 'concepts', category: 'new', eyebrow: 'AI 基础', title: '从大模型到 Agent', text: '用一份展会记录弄清 Token、API、Agent、CLI、MCP 怎么配合。', url: '/basics/concepts.html', stage: 'seed', tint: 'blue', action: '看术语' },
-  { id: 'models', category: 'new', eyebrow: 'AI 基础', title: '大模型怎么选', text: '查看 DeepSeek、通义千问的常用入口，再拿同一份材料看实际差异。', url: '/models/', stage: 'seed', tint: 'blue', count: '2 份档案', action: '看模型' },
-  { id: 'test', category: 'test', eyebrow: '工具实测', title: '同一任务，实测国内外 AI 工具', text: '记录条件、原始输出和人工核对。已有周报对比，海关数据和展会洞察待测。', url: '/tools/', stage: 'seed', wide: true, action: '看实测目录' },
+  { id: 'models', category: 'new', eyebrow: 'AI 基础', title: '国产大模型怎么选', text: '先看一张能力地图，再用三道职场同题比较原始输出。', url: '/models/overview.html', stage: 'sprout', tint: 'blue', action: '看模型全景' },
+  { id: 'test', category: 'test', eyebrow: '工具实测', title: '查海关数据要不要花钱', text: '用紧固件跑一遍免费数据与商业样本，再按查市场、找买家、做监测来选工具。', url: '/tools/trade-data.html', stage: 'sprout', wide: true, action: '看海关数据实测' },
   { id: 'writing', category: 'work', eyebrow: '制造出海', title: '写一封展会客户跟进邮件', text: '把会面记录变成英文邮件，问清图纸、材料和试制数量。', url: '/scenarios/writing.html', stage: 'sprout', count: '1 篇' },
   { id: 'excel', category: 'work', eyebrow: '办公实战', title: 'Excel 表格 + AI 提效', text: '用一份小表练习筛选、求和和复核公式。', url: '/scenarios/excel.html', stage: 'seed', count: '1 篇' },
   { id: 'review', category: 'work', eyebrow: '避坑手册', title: 'AI 幻觉：别把错话发给客户', text: '看周报初稿如何出现无依据的完成率，再逐条回到原始记录。', url: '/scenarios/weekly-report.html#快速识别一处常见误写', stage: 'sprout', wide: true, count: '1 篇' },
@@ -51,6 +51,8 @@ const steps = [
 ]
 
 const updates = [
+  { date: '2026-11-25', tag: '新苗', text: '国产大模型能力地图与三道职场同题实测', link: '/models/overview.html' },
+  { date: '2026-11-25', tag: '新苗', text: '用紧固件查海关数据，比较免费和付费方案', link: '/tools/trade-data.html' },
   { date: '2026-11-25', tag: '新苗', text: '新增 AI 基础知识地图和工具实测目录', link: '/basics/' },
   { date: '2026-11-24', tag: '新苗', text: '把一周零散记录变成一页周报', link: '/scenarios/weekly-report.html' },
   { date: '2026-11-24', tag: '新苗', text: '发布第 01 期国产 AI 实战周讯', link: '/news/2026-11-24.html' },
@@ -64,12 +66,12 @@ const updates = [
       <div class="garden-hero-copy">
         <p class="garden-eyebrow garden-rise"><span aria-hidden="true">✿</span> 桔子哥的 AI 实践笔记</p>
         <h1 id="garden-hero-title" class="garden-rise garden-delay-1">
-          用 Token 做点<br class="garden-title-break"><em>有用的事<svg viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 Q60 1 100 5 T198 4" fill="none" stroke="#7fbf8e" stroke-width="3" stroke-linecap="round" /></svg></em>
+          看懂 AI 全貌，<br class="garden-title-break">选对工具，<em>做成实事。<svg viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 Q60 1 100 5 T198 4" fill="none" stroke="#7fbf8e" stroke-width="3" stroke-linecap="round" /></svg></em>
         </h1>
-        <p class="garden-intro garden-rise garden-delay-1">从日常办公到中国制造出海。用真实任务试国内外 AI 工具，把写周报、查市场、跟进展会客户的方法分享出来。</p>
+        <p class="garden-intro garden-rise garden-delay-1">从日常办公到制造出海，先用图表看全局，再用同题实测看差异。读完一篇，就能知道下一步该试什么。</p>
         <div class="garden-hero-actions garden-rise garden-delay-2">
-          <a class="garden-btn garden-btn-primary" :href="withBase('/start/')">🌱 从第一项练习开始</a>
-          <a class="garden-btn garden-btn-secondary" :href="withBase('/tools/')">看工具实测</a>
+          <a class="garden-btn garden-btn-primary" :href="withBase('/models/overview.html')">看国产大模型全景</a>
+          <a class="garden-btn garden-btn-secondary" :href="withBase('/tools/trade-data.html')">看海关数据实测</a>
         </div>
       </div>
 
@@ -84,8 +86,8 @@ const updates = [
           <a class="garden-cell garden-cell-tests" :href="withBase('/tools/')">
             <span class="garden-cell-kicker">同题验证</span>
             <strong class="garden-cell-title">工具实测 <span aria-hidden="true">↗</span></strong>
-            <span class="garden-cell-desc">同题周报对比<br>海关数据、展会洞察待测</span>
-            <span class="garden-cell-status"><GrowthBadge stage="seed" count="1 篇" /></span>
+            <span class="garden-cell-desc">海关数据选型<br>周报同题对比</span>
+            <span class="garden-cell-status"><GrowthBadge stage="sprout" count="2 篇" /></span>
             <span class="garden-leaf" aria-hidden="true">🍃</span>
           </a>
           <a class="garden-cell garden-cell-office" :href="withBase('/scenarios/#office')">

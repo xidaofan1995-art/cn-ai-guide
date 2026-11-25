@@ -17,6 +17,7 @@ const basicsSidebar = [
   {
     text: '大模型',
     items: [
+      { text: '国产大模型全景与实测', link: '/models/overview' },
       { text: '模型与常用入口', link: '/models/' },
       { text: 'DeepSeek', link: '/models/deepseek' },
       { text: '通义千问', link: '/models/qwen' },
@@ -39,7 +40,7 @@ const basicsSidebar = [
 export default defineConfig({
   lang: 'zh-CN',
   title: '桔子哥的AI探索',
-  description: '从日常办公到中国制造出海，分享 AI 基础、国内外工具实测和可以复用的工作方法。',
+  description: '看懂 AI 全貌，选对工具，做成实事。从日常办公到制造出海，用图表、同题实测和可复核的案例帮你做选择。',
   base,
   appearance: false,
   head: [
@@ -82,7 +83,7 @@ export default defineConfig({
           items: [
             { text: '实测目录', link: '/tools/' },
             { text: '实测方法', link: '/tools/method' },
-            { text: '海关数据收集与整理', link: '/tools/trade-data' },
+            { text: '海关数据选型实测', link: '/tools/trade-data' },
             { text: '展会洞察', link: '/tools/exhibition' }
           ]
         }

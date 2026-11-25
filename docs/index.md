@@ -1,7 +1,7 @@
 ---
 layout: page
 lastUpdated: false
-description: 用 Token 做点有用的事。从日常办公到中国制造出海，分享 AI 基础、国内外工具实测和可以复用的工作方法。
+description: 看懂 AI 全貌，选对工具，做成实事。从日常办公到制造出海，用图表、同题实测和可复核的案例帮你做选择。
 ---
 
 <script setup>

@@ -9,7 +9,7 @@ description: 从大模型到 Token、API、Agent、CLI 和 MCP 的 AI 基础知�
 | 你想解决的问题 | 从这里开始 |
 |---|---|
 | 第一次接触，想试着做一件工作 | [零基础 7 天练习](../start/index.md)，从一封跟进邮件做到一份可编辑的汇报 |
-| 面对很多模型，想知道怎么选 | [模型与常用入口](../models/index.md)和[模型能力对比](../compare/index.md) |
+| 面对很多模型，想知道怎么选 | [国产大模型能力地图与三道职场实测](../models/overview.md) |
 | 想把一项重复工作交给程序跑 | [Token 和大模型 API](./concepts.md#token)，认识用量、输入和输出 |
 | 想用智能体读取文件、整理资料 | [Agent、CLI 与 MCP](./concepts.md#agent)，弄清由谁执行、从哪操作、怎么接工具 |
 

@@ -4,6 +4,7 @@
 
 ## 按任务查看 {#by-task}
 
+- [国产大模型三道职场同题](../models/overview.md#office-tests)
 - [同一份工作记录生成周报](./weekly-report.md)
 
 ## 实测记录 {#results}

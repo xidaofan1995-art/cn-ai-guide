@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-25",
+  "localSettings": {
+    "runtime": "node-llama-cpp 3.22.3",
+    "device": "CPU",
+    "context": 4096,
+    "temperature": 0.2,
+    "top_p": 0.95,
+    "seed": 42,
+    "max_tokens": 1900
+  },
+  "models": [
+    {
+      "id": "cloud",
+      "label": "Qwen 3.8 27B",
+      "method": "Workers AI API",
+      "settings": {
+        "model": "@cf/qwen/qwen3.8-27b",
+        "temperature": 0.2,
+        "max_tokens": 1100,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    {
+      "id": "deepseek",
+      "label": "DeepSeek R1 蒸馏 1.5B",
+      "method": "本地 Q4_K_M GGUF",
+      "settings": {
+        "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+        "sha256": "1741e5b2d062b07acf048bf0d2c514dadf2a48f94e2b4aa0cfe069af3838ee2f"
+      }
+    },
+    {
+      "id": "qwen",
+      "label": "Qwen2.5 Instruct 1.5B",
+      "method": "本地 Q4_K_M GGUF",
+      "settings": {
+        "model": "Qwen2.5-1.5B-Instruct",
+        "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "table",
+      "prompt": "以下是虚构的展会原始记录。A1：Northstar Tools 对 M3×6 不锈钢螺丝感兴趣，希望试制 500 件；材料牌号待确认。A2：Harbor Devices 发来 M2×4 的旧版图纸，邮件称新版预计下周提供；没有报量。A3：Oak Precision 问能否提供 M4×10 样品，提到年用量可能 20,000 件；未给样品数量。A4：Northstar 追加询问盐雾测试，尚未确认测试标准。\n请生成一张 Markdown 表，每家公司只占一行。列为「公司｜产品｜试制或样品数量｜潜在年用量｜下一步｜记录编号」。未确认的数字或条件明确标出，缺失字段写“未提供”。可提下一步建议，但不要新增承诺。只输出表格。",
+      "label": "展会客户表",
+      "summary": "重点看数量列、重复公司和来源编号。",
+      "outputs": [
+        {
+          "response": "| 公司 | 产品 | 试制或样品数量 | 潜在年用量 | 下一步 | 记录编号 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| Northstar Tools | M3×6 不锈钢螺丝（材料牌号待确认） | 500 件 | 未提供 | 确认材料牌号；确认盐雾测试标准 | A1, A4 |\n| Harbor Devices | M2×4（旧版图纸，新版预计下周提供） | 未提供 | 未提供 | 等待新版图纸 | A2 |\n| Oak Precision | M4×10 | 未提供 | 20,000 件（可能） | 确认样品具体数量 | A3 |",
+          "finish": "stop",
+          "tokens": 365,
+          "ms": 4805,
+          "model": "@cf/qwen/qwen3.8-27b",
+          "review": "三家公司各一行，保留 500 件试制、20,000 件潜在年用量及 A1、A4；空白写明未提供。"
+        },
+        {
+          "response": "\n\n以下是根据您提供的信息生成的Markdown表格：\n\n```markdown\n| 公司 | 产品 | 试制或样品数量 | 潜在年用量 | 下一步 | 记录编号 |\n|------|------|------------------|------------|--------|----------|\n| A1   | Northstar Tools | M3×6 不锈钢螺丝 | 未提供 | 0 | 0 |\n| A2   | Harbor Devices | M2×4 的旧版图纸 | 0 | 1 | 1 |\n| A3   | Oak Precision | M4×10 样品 | 未提供 | 2 | 2 |\n| A4   | Northstar | 盐雾测试 | 20,000 件 | 3 | 3 |\n```",
+          "finish": "eogToken",
+          "ms": 31641,
+          "review": "把记录编号放进公司列，漏掉 500 件，把 20,000 件写到 Northstar 的记录上；缺失值出现无依据的数字。"
+        },
+        {
+          "response": "| 公司 | 产品 | 试制或样品数量 | 潜在年用量 | 下一步 | 记录编号 |\n| --- | --- | --- | --- | --- | --- |\n| Northstar Tools | M3×6 不锈钢螺丝 | 500 | 未提供 | 未提供 | A1 |\n| Harbor Devices | M2×4 | 未提供 | 未提供 | 未提供 | A2 |\n| Oak Precision | M4×10 | 20,000 | 未提供 | 未提供 | A3 |\n| Northstar Tools | 盐雾测试 | 未提供 | 未提供 | 未提供 | A4 |",
+          "finish": "eogToken",
+          "ms": 10315,
+          "review": "Northstar 被拆成两行；Oak 的 20,000 件年用量写成了试制或样品数量。"
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "prompt": "以下是虚构的报价表，金额均为人民币，均未含税。Q1：A 厂 500 件起订，单价 0.84 元，工装费 120 元，运费 35 元。Q2：B 厂 1000 件起订，单价 0.68 元，工装费 0 元，运费 48 元。Q3：C 厂 500 件起订，单价 0.91 元，工装费 60 元，运费未确认。客户现在只需要 500 件，预算 600 元（未税；含工装、含运费），本次不能多买。\n按「供应商｜500 件的成本｜能否确定在预算内｜原因或待确认项」输出表格。数字列给出算式。表后写一句采购建议，保持未知运费为未知。",
+      "label": "报价复核",
+      "summary": "把能否在预算内、哪家总成本更低分别核算。",
+      "outputs": [
+        {
+          "response": "| 供应商 | 500 件的成本 | 能否确定在预算内 | 原因或待确认项 |\n| :--- | :--- | :--- | :--- |\n| A 厂 | $500 \\times 0.84 + 120 + 35 = 575$ 元 | 是 | 总成本 575 元低于预算 600 元，且满足 500 件起订量。 |\n| B 厂 | 无法计算（不满足起订量） | 否 | 起订量为 1000 件，客户仅采购 500 件且不能多买，无法下单。 |\n| C 厂 | $500 \\times 0.91 + 60 + \\text{运费} = 515 + \\text{运费}$ 元 | 待确认 | 基础成本 515 元，剩余预算空间 85 元；需确认运费是否 $\\le 85$ 元。 |\n\n**采购建议：**\n建议优先联系 C 厂确认运费，若运费不超过 85 元则 C 厂单价更低更具性价比，否则直接选择 A 厂以确保在预算内交付。",
+          "finish": "stop",
+          "tokens": 494,
+          "ms": 5608,
+          "model": "@cf/qwen/qwen3.8-27b",
+          "review": "表格算对 A 厂 575 元、B 厂不满足起订和 C 厂运费上限 85 元。建议把预算门槛混同于比价门槛，且 C 的单价实际高于 A。"
+        },
+        {
+          "response": "\n\n供应商 | 500 件的成本 | 能确定在预算内 | 原因或待确认项\n--- | --- | --- | ---\nA 厂 | 575 元 | 是 | C 厂的运费未确认\nB 厂 | 388 元 | 是 | B 厂的工装费和运费需要确认\nC 厂 | 515 元 + 未知运费 | 是 | C 厂的运费未确认\n\n采购建议：客户需要确认运费是否确认。如果运费确认，C 厂的总成本为 575 元，预算 600 元，可以确定在预算内。如果运费未确认，可能需要支付更高的运费，或者不购买 C 厂的产品。",
+          "finish": "eogToken",
+          "ms": 40284,
+          "review": "A 厂金额正确；把不满足起订量的 B 厂列入可买，还把 C 厂未给的运费算进了一个确定总价。"
+        },
+        {
+          "response": "以下是根据您提供的信息制作的报价表：\n\n| 供应商 | 500 件的成本 | 能否确定在预算内 | 原因或待确认项 |\n| --- | --- | --- | --- |\n| A 厂 | 0.84 + 120 + 35 | 是 | 工装费 120 元，运费 35 元 |\n| B 厂 | 0.68 + 0 + 48 | 是 | 工装费 0 元，运费 48 元 |\n| C 厂 | 0.91 + 60 | 是 | 工装费 60 元，运费未确认 |\n\n采购建议：由于运费未确认，建议与供应商进一步沟通以确定运费，以便确定是否能在预算内。",
+          "finish": "eogToken",
+          "ms": 12416,
+          "review": "算式漏乘 500 件，也把起订量不足及运费未知的两家都写为在预算内。"
+        }
+      ]
+    },
+    {
+      "id": "mail",
+      "prompt": "以下是虚构的展会跟进材料。M1：客户 Alex 对 M3×6 不锈钢螺丝感兴趣，想做 500 件试制。M2：材料牌号和最新图纸还没有收到。M3：客户提出盐雾测试，标准和验收条件待确认。M4：内部还未确认价格和交期。请写一封英文跟进邮件，含简短主题，正文 80–120 个英文单词。只请求确认最新图纸、材料牌号及盐雾测试要求，交代收到后会复核可行性；禁止承诺价格、交期或达标。",
+      "label": "英文跟进邮件",
+      "summary": "先核对客户要补的材料，再检查邮件有没有提前承诺。",
+      "outputs": [
+        {
+          "response": "Subject: Follow-up: M3x6 Stainless Steel Screws\n\nDear Alex,\n\nThank you for your interest in our M3x6 stainless steel screws for the 500-piece trial run. To proceed efficiently, could you please provide the latest drawings and the specific material grade? Additionally, please clarify the salt spray test standards and acceptance criteria you require.\n\nOnce we receive these details, we will immediately review the technical feasibility and confirm if we can meet your specifications. We are committed to ensuring the product aligns with your needs before moving forward. Please let us know if you have any questions.\n\nBest regards,\n\n[Your Name]",
+          "finish": "stop",
+          "tokens": 265,
+          "ms": 25702,
+          "model": "@cf/qwen/qwen3.8-27b",
+          "review": "询问了最新图纸、材料牌号和测试条件，保留收到后复核；可把 “immediately” 删掉，避免额外的时效表述。"
+        },
+        {
+          "response": "\n\nSubject: Follow-Up on M3×6螺丝 Production  \n\nDear Alex,  \n\nThank you for reaching out regarding the M3×6螺丝 production. As of now, we have received the latest material specifications and the corresponding production guidelines. We will review these documents in conjunction with your proposed production plan to ensure feasibility and alignment with our requirements.  \n\nWe understand that the production of 500 items is a significant task, and we are working with our internal team to assess the feasibility of this production plan. Please rest assured that we will keep you updated on the progress and any necessary adjustments.  \n\nThank you for your interest in our product. We look forward to hearing from you soon.  \n\nBest regards,  \n[Your Name]  \n[Your Position]  \n[Your Company Name]  \n[Your Contact Information]",
+          "finish": "eogToken",
+          "ms": 14717,
+          "review": "把尚未收到的材料写成了已收到，遗漏向客户确认测试要求，标题还混入了中文。"
+        },
+        {
+          "response": "Subject: Confirmation of Latest Drawings, Material Specifications, and Salt Spray Test Requirements\n\nDear Alex,\n\nThank you for your interest in M3×6 stainless steel screws. We have received your request for 500 pieces of the product for trial production. \n\nPlease confirm the latest drawings and material specifications. We will review these documents and provide a detailed response once we have them.\n\nAdditionally, we need to confirm the salt spray test requirements. Please let us know the specific conditions and standards for the test.\n\nWe will review these details and provide a comprehensive response shortly.\n\nThank you for your cooperation.\n\nBest regards,  \nM3 Team",
+          "finish": "eogToken",
+          "ms": 8637,
+          "review": "询问了图纸、材料和测试要求，但 “shortly” 增加了时效预期，署名 “M3 Team” 也应换成实际署名。"
+        }
+      ]
+    }
+  ]
+}
