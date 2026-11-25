@@ -62,6 +62,7 @@ const previews = repository.discussions.nodes
   .slice(0, bottleLimit)
   .map(discussion => ({ number: discussion.number, preview: getPreview(discussion) }))
 
-const destination = new URL('../docs/.vitepress/theme/feedback-discussions.json', import.meta.url)
-await writeFile(destination, JSON.stringify(previews) + '\n')
+const data = JSON.stringify(previews) + '\n'
+await writeFile(new URL('../docs/.vitepress/theme/feedback-discussions.json', import.meta.url), data)
+await writeFile(new URL('../docs/public/feedback-discussions.json', import.meta.url), data)
 console.log('Synced ' + previews.length + ' public message tree preview(s).')

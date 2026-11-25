@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import messageData from './feedback-discussions.json'
 
@@ -8,7 +8,25 @@ interface Message {
   preview: string
 }
 
-const messages: Message[] = messageData
+const messages = ref<Message[]>(messageData)
+const publicFeed = import.meta.env.VITE_FEEDBACK_FEED
+
+onMounted(async () => {
+  if (!publicFeed) return
+
+  try {
+    const response = await fetch(publicFeed, { signal: AbortSignal.timeout(8000) })
+    if (!response.ok) return
+    const entries: unknown = await response.json()
+    if (Array.isArray(entries)) {
+      messages.value = entries.filter((entry): entry is Message =>
+        entry && Number.isInteger(entry.number) && typeof entry.preview === 'string'
+      ).slice(0, 6)
+    }
+  } catch {
+    // The tree keeps its initial state if the public feed cannot be reached.
+  }
+})
 const discussions = 'https://github.com/xidaofan1995-art/cn-ai-guide/discussions'
 const composeDialog = ref<HTMLDialogElement>()
 
@@ -19,7 +37,7 @@ const positions = [
   [32, 58], [71, 57]
 ]
 
-const bottles = positions.map(([x, y, mobileX, mobileY], index) => ({
+const bottles = computed(() => positions.map(([x, y, mobileX, mobileY], index) => ({
   style: {
     '--bottle-x': x + '%',
     '--bottle-y': y + '%',
@@ -28,8 +46,8 @@ const bottles = positions.map(([x, y, mobileX, mobileY], index) => ({
     '--bottle-delay': (index * -0.57) + 's'
   },
   wideOnly: mobileX === undefined,
-  message: messages[index]
-}))
+  message: messages.value[index]
+})))
 </script>
 
 <template>

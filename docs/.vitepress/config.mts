@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-const base = '/cn-ai-guide/'
+const base = process.env.CF_PAGES === '1' ? '/' : '/cn-ai-guide/'
 
 const basicsSidebar = [
   {
