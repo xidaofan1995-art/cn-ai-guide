@@ -6,7 +6,28 @@ import GrowthBadge from './GrowthBadge.vue'
 import { maturity, type Maturity } from './maturity'
 
 const { Layout } = DefaultTheme
-const { frontmatter, site } = useData()
+const { frontmatter, page, site } = useData()
+const updatedFormatter = new Intl.DateTimeFormat('zh-CN', {
+  timeZone: 'Asia/Shanghai',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  hourCycle: 'h23'
+})
+
+const lastUpdated = computed(() => {
+  if (!page.value.lastUpdated) return
+
+  const date = new Date(page.value.lastUpdated)
+  const parts = Object.fromEntries(updatedFormatter.formatToParts(date).map(({ type, value }) => [type, value]))
+  return {
+    iso: date.toISOString(),
+    text: `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}`
+  }
+})
+
 const stage = computed(() => {
   const candidate = frontmatter.value.maturity
   return typeof candidate === 'string' && Object.hasOwn(maturity, candidate)
@@ -27,6 +48,11 @@ const stage = computed(() => {
       <div v-if="stage" class="garden-doc-stage">
         <GrowthBadge :stage="stage" meter />
       </div>
+    </template>
+    <template #doc-footer-before>
+      <p v-if="lastUpdated" class="garden-last-updated">
+        最后更新：<time :datetime="lastUpdated.iso" title="北京时间">{{ lastUpdated.text }}</time>
+      </p>
     </template>
     <template #doc-after>
       <div v-if="stage" class="garden-doc-feedback">

@@ -20,6 +20,7 @@
 }
 
 :root {
+  color-scheme: only light;
   --vp-c-bg: #FFFFFF;
   --vp-c-bg-alt: #FFFFFF;
   --vp-c-bg-elv: #FFFFFF;
@@ -113,8 +114,9 @@
   font-family: var(--garden-serif);
 }
 
-.garden-mono,
+:is(code, kbd),
 .garden-stage,
+.garden-cell-kicker,
 .garden-card-eyebrow,
 .garden-update-tag {
   font-family: var(--vp-font-family-mono);
@@ -220,7 +222,7 @@
     "basics basics basics basics tests tests"
     "office office office office tests tests"
     "export export export export export export";
-  grid-template-rows: minmax(111px, auto) minmax(70px, auto) minmax(64px, auto);
+  grid-template-rows: minmax(111px, auto) minmax(85px, auto) minmax(85px, auto);
   gap: 12px;
 }
 
@@ -244,6 +246,15 @@
   overflow: hidden;
   padding: 12px 14px;
   font-size: 13px;
+  text-align: left;
+}
+
+.garden-cell-kicker {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--vp-c-text-2);
+  font-size: 11px;
+  letter-spacing: .06em;
 }
 
 .garden-cell-title {
@@ -270,10 +281,12 @@
   grid-area: tests;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 4px;
+  align-items: flex-start;
+}
+
+.garden-cell-status {
+  margin-top: auto;
+  padding-top: 6px;
 }
 
 .garden-cell-office {
@@ -282,10 +295,6 @@
 
 .garden-cell-export {
   grid-area: export;
-  display: flex;
-  align-items: center;
-  gap: 0 12px;
-  flex-wrap: wrap;
 }
 
 .garden-leaf {
@@ -308,17 +317,10 @@
   50% { transform: rotate(17deg); }
 }
 
-.garden-growth,
 .garden-stage,
 .garden-meter {
   display: inline-flex;
   align-items: center;
-}
-
-.garden-growth {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
 }
 
 .garden-stage {
@@ -636,10 +638,20 @@
   margin-bottom: 13px;
 }
 
-.garden-doc-stage .garden-growth {
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
+.garden-last-updated {
+  margin-bottom: 18px;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* The layout slot renders the timestamp in a fixed format and time zone. */
+.VPDocFooter .last-updated {
+  display: none;
+}
+
+.garden-last-updated + .edit-info:not(:has(.edit-link)) {
+  display: none;
 }
 
 .guide-about-photo {

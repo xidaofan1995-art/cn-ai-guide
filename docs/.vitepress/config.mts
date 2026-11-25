@@ -1,5 +1,7 @@
 import { defineConfig } from 'vitepress'
 
+const base = '/cn-ai-guide/'
+
 const basicsSidebar = [
   {
     text: 'AI 基础',
@@ -25,8 +27,12 @@ export default defineConfig({
   lang: 'zh-CN',
   title: '桔子哥的AI探索',
   description: '从日常办公到中国制造出海，分享 AI 基础、国内外工具实测和可以复用的工作方法。',
-  base: '/cn-ai-guide/',
+  base,
   appearance: false,
+  head: [
+    ['meta', { name: 'color-scheme', content: 'light' }],
+    ['link', { rel: 'preload', as: 'font', type: 'font/woff2', href: `${base}fonts/noto-serif-sc.woff2`, crossorigin: 'anonymous' }]
+  ],
   lastUpdated: true,
   themeConfig: {
     nav: [
@@ -94,7 +100,6 @@ export default defineConfig({
       }
     },
     outline: { label: '本页目录', level: [2, 3] },
-    docFooter: { prev: '上一篇', next: '下一篇' },
-    lastUpdatedText: '最后更新'
+    docFooter: { prev: '上一篇', next: '下一篇' }
   }
 })

@@ -76,20 +76,25 @@ const updates = [
       <div class="garden-nursery garden-rise garden-delay-2" aria-label="栏目入口">
         <div class="garden-plot">
           <a class="garden-cell garden-cell-basics" :href="withBase('/basics/')">
+            <span class="garden-cell-kicker">知识地图</span>
             <strong class="garden-cell-title">AI 基础 <span aria-hidden="true">↗</span></strong>
             <span class="garden-cell-desc">从模型怎么选，到 API、Agent、CLI 和 MCP 怎么配合。</span>
             <span class="garden-leaf" aria-hidden="true">🌿</span>
           </a>
           <a class="garden-cell garden-cell-tests" :href="withBase('/tools/')">
+            <span class="garden-cell-kicker">同题验证</span>
             <strong class="garden-cell-title">工具实测 <span aria-hidden="true">↗</span></strong>
             <span class="garden-cell-desc">同题周报对比<br>海关数据、展会洞察待测</span>
+            <span class="garden-cell-status"><GrowthBadge stage="seed" count="1 篇" /></span>
             <span class="garden-leaf" aria-hidden="true">🍃</span>
           </a>
           <a class="garden-cell garden-cell-office" :href="withBase('/scenarios/#office')">
+            <span class="garden-cell-kicker">常用任务</span>
             <strong class="garden-cell-title">办公实战 <span aria-hidden="true">↗</span></strong>
             <span class="garden-cell-desc">邮件 · 周报 · Excel · PPT</span>
           </a>
           <a class="garden-cell garden-cell-export" :href="withBase('/scenarios/#export')">
+            <span class="garden-cell-kicker">出海案例</span>
             <strong class="garden-cell-title">制造出海 <span aria-hidden="true">↗</span></strong>
             <span class="garden-cell-desc">从展会线索到客户跟进</span>
           </a>
@@ -134,7 +139,7 @@ const updates = [
           </template>
 
           <div class="garden-card-foot">
-            <span><GrowthBadge :stage="card.stage" :count="card.count" meter /></span>
+            <span><GrowthBadge :stage="card.stage" :count="card.count" /></span>
             <a :href="withBase(card.url)" :aria-label="(card.action || '进园') + '：' + card.title">{{ card.action || '进园' }} <span aria-hidden="true">→</span></a>
           </div>
         </article>
