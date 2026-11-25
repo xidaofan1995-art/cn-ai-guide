@@ -6,7 +6,7 @@ import GrowthBadge from './GrowthBadge.vue'
 import { maturity, type Maturity } from './maturity'
 
 const { Layout } = DefaultTheme
-const { frontmatter } = useData()
+const { frontmatter, site } = useData()
 const stage = computed(() => {
   const candidate = frontmatter.value.maturity
   return typeof candidate === 'string' && Object.hasOwn(maturity, candidate)
@@ -37,7 +37,7 @@ const stage = computed(() => {
     <template #layout-bottom>
       <footer class="garden-footer">
         <div class="garden-wrap garden-footer-inner">
-          <span>国产AI实战指南 · 免费内容全站公开</span>
+          <span>{{ site.title }} · 免费内容全站公开</span>
           <span><a :href="withBase('/news/')">AI 资讯</a> · <a :href="withBase('/feedback/')">留言板</a> · <a :href="withBase('/about/')">关于我们</a></span>
         </div>
       </footer>

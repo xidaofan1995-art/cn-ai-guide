@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: '国产AI实战指南',
+  title: '桔子哥的AI探索',
   description: '面向职场人和中小老板的国产大模型实战知识库',
   base: '/cn-ai-guide/',
   appearance: false,

@@ -1,5 +1,5 @@
 ---
-description: Simon 为什么做国产AI实战指南，以及这个网站希望为普通职场人解决什么问题。
+description: Simon 为什么做桔子哥的AI探索，以及这个网站希望为普通职场人解决什么问题。
 ---
 
 <script setup>
