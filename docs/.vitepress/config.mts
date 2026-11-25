@@ -8,7 +8,10 @@ const basicsSidebar = [
     items: [
       { text: '基础知识地图', link: '/basics/' },
       { text: '零基础 7 天练习', link: '/start/' },
-      { text: 'Token、API、Agent、CLI、MCP', link: '/basics/concepts' }
+      { text: 'Token、API、Agent、CLI、MCP', link: '/basics/concepts' },
+      { text: '四段式提示词', link: '/basics/prompt-template' },
+      { text: '注册与账号安全', link: '/basics/account-safety' },
+      { text: '验证三步法', link: '/basics/verify-answers' }
     ]
   },
   {
@@ -17,8 +20,18 @@ const basicsSidebar = [
       { text: '模型与常用入口', link: '/models/' },
       { text: 'DeepSeek', link: '/models/deepseek' },
       { text: '通义千问', link: '/models/qwen' },
+      { text: 'DeepSeek 实战自测', link: '/models/deepseek-self-test' },
+      { text: '豆包工作选型实练', link: '/models/doubao' },
+      { text: '模型速查卡', link: '/models/quick-pick' },
       { text: '模型能力对比', link: '/compare/' },
       { text: '周报同题对比', link: '/compare/weekly-report' }
+    ]
+  },
+  {
+    text: '避坑手册',
+    items: [
+      { text: '个人数据安全三道门', link: '/guides/data-security' },
+      { text: '团队数据红线', link: '/guides/data-redline' }
     ]
   }
 ]
@@ -36,9 +49,10 @@ export default defineConfig({
   lastUpdated: true,
   themeConfig: {
     nav: [
-      { text: 'AI 基础', link: '/basics/', activeMatch: '^/(basics|start|models|compare)/' },
+      { text: 'AI 基础', link: '/basics/', activeMatch: '^/(basics|start|models|compare|guides)/' },
       { text: '工具实测', link: '/tools/', activeMatch: '^/tools/' },
       { text: '实战案例', link: '/scenarios/', activeMatch: '^/scenarios/' },
+      { text: '提示词库', link: '/prompts/', activeMatch: '^/prompts/' },
       { text: 'AI 资讯', link: '/news/', activeMatch: '^/news/' },
       { text: '留言板', link: '/feedback/', activeMatch: '^/feedback/' },
       { text: '关于网站', link: '/about/', activeMatch: '^/about/' }
@@ -48,6 +62,20 @@ export default defineConfig({
       '/models/': basicsSidebar,
       '/start/': basicsSidebar,
       '/compare/': basicsSidebar,
+      '/guides/': basicsSidebar,
+      '/prompts/': [
+        {
+          text: '提示词苗圃',
+          items: [
+            { text: '提问基础 P01–P10', link: '/prompts/#prompt-basics' },
+            { text: '模型选型 P11–P13', link: '/prompts/#prompt-models' },
+            { text: '职场实战 P14–P21', link: '/prompts/#prompt-work' },
+            { text: '团队协作 P22–P26', link: '/prompts/#prompt-teams' },
+            { text: '安全与避坑 P27–P28', link: '/prompts/#prompt-safety' },
+            { text: '资讯与运营 P29–P30', link: '/prompts/#prompt-news' }
+          ]
+        }
+      ],
       '/tools/': [
         {
           text: '工具实测',
@@ -68,7 +96,8 @@ export default defineConfig({
             { text: '写文案', link: '/scenarios/writing' },
             { text: '做 PPT', link: '/scenarios/slides' },
             { text: '写周报', link: '/scenarios/weekly-report' },
-            { text: 'Excel 表格', link: '/scenarios/excel' }
+            { text: 'Excel 表格', link: '/scenarios/excel' },
+            { text: '数据核对三道关', link: '/scenarios/data-verify' }
           ]
         }
       ],

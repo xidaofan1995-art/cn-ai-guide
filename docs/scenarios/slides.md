@@ -72,3 +72,5 @@ const exampleFile = withBase('/practice/exhibition-briefing-example.pptx')
 - 五页都有独立结论，重复数据在各页一致。
 - 待定事项仍有醒目标记；负责人和日期可从来源找到。
 - 下载的文件能在目标软件打开，标题、表格与要点可以单独编辑。发出前再用演示模式检查文字换行。
+
+可复制的模板见 [P19 演示大纲](/prompts/#p19)和 [P20 开场讲稿](/prompts/#p20)。

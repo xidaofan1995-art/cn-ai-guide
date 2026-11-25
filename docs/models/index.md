@@ -4,7 +4,7 @@
 
 ## 模型总览 {#overview}
 
-现有两份模型档案。[模型能力对比](../compare/index.md)提供同一份材料的测试记录，可拿来练习复核。
+[一句话选模型速查卡](./quick-pick.md)提供按职业和任务的试用起点。[模型能力对比](../compare/index.md)记录同一份材料的测试过程，可拿来练习复核。
 
 ## 模型详解 {#profiles}
 
@@ -14,7 +14,9 @@
 |---|---|
 | [`DeepSeek`](./deepseek.md) | 从零散记录提取周报关键事实 |
 | [通义千问 `Qwen`](./qwen.md) | 用同一份素材练习周报，再整理演示大纲 |
+| [DeepSeek 实战自测](./deepseek-self-test.md) | 用五道题评估当前入口和版本的表现 |
+| [豆包工作](./doubao.md) | 在账号支持的入口试一轮同题多模 |
 
 ## 待更新模型 {#upcoming}
 
-豆包、`Kimi`、元宝等产品的模型与常用入口将分批整理。WorkBuddy 这类办公智能体产品的体验会放在[工具实测](../tools/index.md)。
+`Kimi`、元宝等产品的模型与常用入口将分批整理。WorkBuddy 这类办公智能体产品的体验会放在[工具实测](../tools/index.md)。

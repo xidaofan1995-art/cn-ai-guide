@@ -14,6 +14,8 @@
 
 ## 第一次练习
 
+想用五道题系统试一遍，可以看[DeepSeek 实战自测清单](./deepseek-self-test.md)。
+
 在网页端新建对话，粘贴[周报练习材料](/practice/weekly-report.txt)。先使用能处理纯文本的对话入口，按材料核对 12 条总线索、5 条优先线索和 4 条已发邮件。再追问有哪些「待确认」被错写成已完成。
 
 查看完整的[周报教程](../scenarios/weekly-report.md)。[同题对比](../compare/weekly-report.md)使用的是 **DeepSeek-R1-Distill-Qwen-1.5B** 公开权重的本地量化版本，版本与官方对话服务分别记录。[模型卡](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B)

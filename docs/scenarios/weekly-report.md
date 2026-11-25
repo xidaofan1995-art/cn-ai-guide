@@ -73,3 +73,5 @@ maturity: sprout
 - 材料没写的日期、回复率或成交进展保留待确认。
 
 可以用[同题对比记录](../compare/weekly-report.md)看测试条件和评分口径。
+
+提示词库收录了 [P02 写周报](/prompts/#p02)、[P24 汇总周报](/prompts/#p24)和 [P28 幻觉信号检查](/prompts/#p28)。
