@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1040" viewBox="0 0 720 1040" role="img" aria-labelledby="title desc">
+<title id="title">多 AI 共享记忆与业务资产架构</title><desc id="desc">人和智能体通过授权接口双向访问。读取正式知识，提交候选记忆并审核写入权威存储。记忆框架与检索服务可选，连接访问层而非必经环节。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto-start-reverse"><path d="M0 0L6 3.5L0 7z" fill="#65866e"/></marker></defs>
+<rect width="720" height="1040" rx="22" fill="#f7f9f3"/>
+<g font-family="system-ui, 'Noto Sans SC', sans-serif" fill="#253a31">
+<text x="28" y="48" font-size="30" font-weight="700">多 AI 共享记忆与业务资产</text>
+<text x="28" y="77" font-size="20" fill="#526b58">独立于模型，按权限读取与更新</text>
+<g fill="white" stroke="#c4d4c7" stroke-width="1.6"><rect x="28" y="99" width="322" height="117" rx="12"/><rect x="370" y="99" width="322" height="117" rx="12"/></g>
+<g font-size="23" font-weight="700"><text x="48" y="132">人 · 多端工作台</text><text x="390" y="132">AI · 多智能体</text></g>
+<g font-size="19" fill="#526b58"><text x="48" y="163">手机 / 电脑 / Web</text><text x="48" y="190">Obsidian / Notion（可选）</text><text x="390" y="163">ChatGPT / Claude</text><text x="390" y="190">Codex / Hermes / 其他</text></g>
+<g stroke="#65866e" stroke-width="2" fill="none" marker-start="url(#arrow)" marker-end="url(#arrow)"><path d="M189 222V248"/><path d="M531 222V248"/></g>
+<rect x="28" y="254" width="664" height="108" rx="12" fill="#e4efe4" stroke="#719a7c" stroke-width="1.6"/>
+<text x="48" y="288" font-size="25" font-weight="700">统一访问与权限</text><text x="48" y="319" font-size="21">连接器 / API / MCP / 本地文件</text><text x="48" y="345" font-size="18" fill="#526b58">按 Agent 能力接入，可直接授权原生接口</text>
+<path d="M174 362V397" stroke="#65866e" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M480 397V362" stroke="#65866e" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<g fill="white" stroke="#c4d4c7" stroke-width="1.6"><rect x="28" y="402" width="322" height="107" rx="12"/><rect x="370" y="402" width="322" height="107" rx="12"/></g>
+<g font-size="23" font-weight="700"><text x="48" y="435">写入路径</text><text x="390" y="435">读取路径</text></g>
+<g font-size="19" fill="#526b58"><text x="48" y="466">提交摘要 / 产出 / 变更</text><text x="48" y="492">去重 · 审核 · 发布</text><text x="390" y="466">按项目检索最新上下文</text><text x="390" y="492">返回原文、证据及版本</text></g>
+<path d="M174 509V548" stroke="#65866e" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M531 548V509" stroke="#65866e" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="28" y="553" width="664" height="270" rx="12" fill="#fff" stroke="#c4d4c7" stroke-width="1.6"/>
+<text x="48" y="586" font-size="24" font-weight="700">权威数据存储 · 按数据类型分工</text>
+<g fill="#f4f8f3" stroke="#d2e0d3"><rect x="48" y="600" width="624" height="64" rx="8"/><rect x="48" y="674" width="624" height="64" rx="8"/><rect x="48" y="748" width="624" height="64" rx="8"/></g>
+<g font-size="21" font-weight="700"><text x="62" y="626">云盘 · Google Drive 等</text><text x="62" y="700">Git · GitHub / GitLab</text><text x="62" y="774">数据库 · Supabase / PostgreSQL</text></g>
+<g font-size="19" fill="#526b58"><text x="62" y="650">长期记忆 / 项目上下文 / 原始业务产出</text><text x="62" y="724">正式规则 / Skills / 代码与版本</text><text x="62" y="798">任务状态 / 结构化记忆 / 业务数据</text></g>
+<path d="M692 308H706V921H692" stroke="#65866e" stroke-width="2" stroke-dasharray="6 5" fill="none" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<path d="M360 823V856" stroke="#65866e" stroke-width="2" stroke-dasharray="6 5" fill="none" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<rect x="28" y="861" width="664" height="124" rx="12" fill="#f7f9f3" stroke="#8da993" stroke-width="1.6" stroke-dasharray="7 4"/>
+<text x="48" y="893" font-size="23" font-weight="700">可选增强服务 · 非必经层</text>
+<text x="48" y="924" font-size="19">记忆提炼与检索：Mem0 / Zep / Letta</text><text x="48" y="953" font-size="19">文档检索与索引：Dify / RAGFlow 等</text>
+<text x="360" y="1013" text-anchor="middle" font-size="17" fill="#526b58">方案示意 · 可选服务按授权接入访问层</text>
+</g></svg>
