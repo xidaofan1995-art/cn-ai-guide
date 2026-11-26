@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
-<title id="title">多 Agent 知识库架构</title><desc id="desc">设备、Agent、知识治理和独立权威存储四层架构，工作区与正式仓库经过受控桥接。</desc>
-<rect width="1000" height="700" rx="24" fill="#f7f9f3"/><g font-family="system-ui, sans-serif" fill="#253a31">
-<text x="40" y="52" font-size="30" font-weight="700">一套知识，多端与多 Agent 使用</text><text x="40" y="82" font-size="17" fill="#556b60">文件同步 ≠ Agent 访问 ≠ 知识治理</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="780" viewBox="0 0 1000 780" role="img" aria-labelledby="title desc">
+<title id="title">多 AI 共享记忆与数据治理中心</title><desc id="desc">多个 Agent 经授权访问和治理层读取权威存储，云盘保存资料，Git 保存规则，数据库保存动态状态；可选记忆和检索服务，个人工作台跨端访问。</desc>
+<rect width="1000" height="780" rx="24" fill="#f7f9f3"/>
+<g font-family="system-ui, sans-serif" fill="#253a31">
+<text x="40" y="50" font-size="30" font-weight="700">多个 AI 如何共享同一个大脑？</text><text x="40" y="80" font-size="17" fill="#556b60">存储、知识管理、记忆提炼与检索是不同职责</text>
 <g fill="#fff" stroke="#c4d4c7" stroke-width="1.5">
-<rect x="40" y="107" width="920" height="90" rx="14"/><rect x="40" y="222" width="920" height="95" rx="14"/><rect x="40" y="342" width="920" height="132" rx="14" fill="#e6f1e6" stroke="#719a7c"/><rect x="40" y="500" width="920" height="150" rx="14"/>
+<rect x="40" y="102" width="920" height="95" rx="14"/><rect x="40" y="222" width="920" height="124" rx="14" fill="#e6f1e6" stroke="#719a7c"/><rect x="40" y="371" width="920" height="150" rx="14"/><rect x="40" y="546" width="920" height="90" rx="14"/><rect x="40" y="661" width="920" height="76" rx="14"/>
 </g>
-<g font-size="17" font-weight="600" fill="#526b58"><text x="58" y="133">01 人与设备</text><text x="58" y="248">02 执行层</text><text x="58" y="368">03 访问与治理</text><text x="58" y="526">04 权威存储</text></g>
-<g font-size="21" text-anchor="middle" font-weight="600">
-<text x="232" y="171">手机</text><text x="500" y="171">电脑</text><text x="768" y="171">Web 工作台</text>
-<text x="232" y="286">本地 Agent</text><text x="500" y="286">云端 Agent</text><text x="768" y="286">自动化任务</text>
-</g><g stroke="#6b8d74" stroke-width="2" fill="none"><path d="M500 197v25 M500 317v25 M500 474v26"/><path d="M494 216l6 6 6-6 M494 336l6 6 6-6 M494 494l6 6 6-6"/></g>
-<g text-anchor="middle"><text x="500" y="406" font-size="25" font-weight="700">Obsidian 工作区 + 审核桥接</text><text x="500" y="440" font-size="18">单一同步工具 · 待审区 · 来源核对 · 权限/API</text></g>
-<g stroke="#c4d4c7" fill="#f4f8f3"><rect x="60" y="544" width="280" height="86" rx="10"/><rect x="360" y="544" width="280" height="86" rx="10"/><rect x="660" y="544" width="280" height="86" rx="10"/></g>
-<g text-anchor="middle" font-size="22" font-weight="700"><text x="200" y="575">Git</text><text x="500" y="575">网盘</text><text x="800" y="575">数据库</text></g><g text-anchor="middle" font-size="17" fill="#526b58"><text x="200" y="605">正式知识 · 版本记录</text><text x="500" y="605">原始材料 · 大型附件</text><text x="800" y="605">任务状态 · 结构化数据</text></g><text x="500" y="679" font-size="15" text-anchor="middle" fill="#526b58">桔子哥的 AI 探索 · 方案示意，非已部署实测</text></g></svg>
+<g font-size="17" font-weight="600" fill="#526b58"><text x="58" y="129">01 AI 执行层</text><text x="58" y="249">02 统一归档与访问治理</text><text x="58" y="398">03 权威数据存储</text><text x="58" y="573">04 按需增强（非必选）</text><text x="58" y="688">05 人的工作台</text></g>
+<g font-size="21" text-anchor="middle" font-weight="600"><text x="190" y="168">ChatGPT / Claude</text><text x="500" y="168">Codex / Hermes</text><text x="810" y="168">其他 Agent</text></g>
+<g text-anchor="middle"><text x="500" y="288" font-size="25" font-weight="700">数据管家 + 连接器 / API / MCP</text><text x="500" y="319" font-size="17">摘要提交 · 权限隔离 · 去重 · 证据审核 · 版本更新</text></g>
+<g stroke="#c4d4c7" fill="#f4f8f3"><rect x="60" y="416" width="280" height="85" rx="10"/><rect x="360" y="416" width="280" height="85" rx="10"/><rect x="660" y="416" width="280" height="85" rx="10"/></g>
+<g text-anchor="middle" font-size="22" font-weight="700"><text x="200" y="447">云盘</text><text x="500" y="447">Git</text><text x="800" y="447">数据库</text></g><g text-anchor="middle" font-size="16" fill="#526b58"><text x="200" y="478">记忆 · 上下文 · 业务产出</text><text x="500" y="478">Skills · 规则 · 代码版本</text><text x="800" y="478">任务 · 状态 · 结构化记忆</text></g>
+<g font-size="18" text-anchor="middle"><text x="275" y="610">Mem0 / Zep / Letta：记忆服务</text><text x="730" y="610">Dify / RAGFlow：知识检索</text><text x="500" y="716">Obsidian / Notion · 手机 · 电脑 · Web 看板</text></g>
+<g stroke="#6b8d74" stroke-width="2" fill="none"><path d="M500 197v25 M500 346v25 M500 521v25 M500 636v25"/><path d="M494 216l6 6 6-6 M494 365l6 6 6-6 M494 540l6 6 6-6 M494 655l6 6 6-6"/></g>
+<text x="500" y="762" font-size="15" text-anchor="middle" fill="#526b58">桔子哥的 AI 探索 · 方案示意，非实际部署结果</text>
+</g></svg>
