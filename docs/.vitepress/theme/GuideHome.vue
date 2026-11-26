@@ -32,7 +32,7 @@ const cards: Card[] = [
   { id: 'concepts', category: 'new', eyebrow: 'AI 基础', title: '从大模型到 Agent', text: '用一份展会记录弄清 Token、API、Agent、CLI、MCP 怎么配合。', url: '/basics/concepts.html', stage: 'seed', tint: 'blue', action: '看术语' },
   { id: 'models', category: 'new', eyebrow: 'AI 基础', title: '国产大模型怎么选', text: '先看一张能力地图，再用三道职场同题比较原始输出。', url: '/models/overview.html', stage: 'sprout', tint: 'blue', action: '看模型全景' },
   { id: 'test', category: 'test', eyebrow: '工具实测', title: '查海关数据要不要花钱', text: '用紧固件跑一遍免费数据与商业样本，再按查市场、找买家、做监测来选工具。', url: '/tools/trade-data.html', stage: 'sprout', wide: true, action: '看海关数据实测' },
-  { id: 'agent-knowledge', category: 'test', eyebrow: '工具选型 · 方案研究', title: '多个 AI 怎么共享一个知识库', text: '一张架构图看懂 Obsidian、GitHub、网盘与 Agent，再比较九种同步方案和三套组合。', url: '/tools/obsidian-agent-knowledge.html', stage: 'seed', wide: true, action: '看知识库选型' },
+  { id: 'agent-knowledge', category: 'test', eyebrow: '工具选型 · 方案研究', title: '多个 AI 如何共享同一个大脑', text: '一张图看懂云盘、Git、知识库、数据库、记忆框架与 RAG，明确不同 AI 的记忆、上下文和产出应该存在哪里。', url: '/tools/obsidian-agent-knowledge.html', stage: 'seed', wide: true, action: '看共享记忆全景' },
   { id: 'writing', category: 'work', eyebrow: '制造出海', title: '写一封展会客户跟进邮件', text: '把会面记录变成英文邮件，问清图纸、材料和试制数量。', url: '/scenarios/writing.html', stage: 'sprout', count: '1 篇' },
   { id: 'excel', category: 'work', eyebrow: '办公实战', title: 'Excel 表格 + AI 提效', text: '用一份小表练习筛选、求和和复核公式。', url: '/scenarios/excel.html', stage: 'seed', count: '1 篇' },
   { id: 'review', category: 'work', eyebrow: '避坑手册', title: 'AI 幻觉：别把错话发给客户', text: '看周报初稿如何出现无依据的完成率，再逐条回到原始记录。', url: '/scenarios/weekly-report.html#快速识别一处常见误写', stage: 'sprout', wide: true, count: '1 篇' },
@@ -52,7 +52,7 @@ const steps = [
 ]
 
 const updates = [
-  { date: '2026-11-26', tag: '新苗', text: 'Obsidian 九种同步方案与多 Agent 知识库架构', link: '/tools/obsidian-agent-knowledge.html' },
+  { date: '2026-11-26', tag: '新苗', text: '多 AI 共享记忆、知识库与数据归档全景', link: '/tools/obsidian-agent-knowledge.html' },
   { date: '2026-11-25', tag: '新苗', text: '国产大模型能力地图与三道职场同题实测', link: '/models/overview.html' },
   { date: '2026-11-25', tag: '新苗', text: '用紧固件查海关数据，比较免费和付费方案', link: '/tools/trade-data.html' },
   { date: '2026-11-25', tag: '新苗', text: '新增 AI 基础知识地图和工具实测目录', link: '/basics/' },
@@ -88,7 +88,7 @@ const updates = [
           <a class="garden-cell garden-cell-tests" :href="withBase('/tools/')">
             <span class="garden-cell-kicker">同题验证</span>
             <strong class="garden-cell-title">工具实测 <span aria-hidden="true">↗</span></strong>
-            <span class="garden-cell-desc">海关数据选型<br>多 Agent 知识库</span>
+            <span class="garden-cell-desc">海关数据选型<br>多 AI 共享记忆</span>
             <span class="garden-cell-status"><GrowthBadge stage="sprout" count="3 篇" /></span>
             <span class="garden-leaf" aria-hidden="true">🍃</span>
           </a>
