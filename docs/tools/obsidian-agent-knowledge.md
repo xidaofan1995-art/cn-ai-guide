@@ -12,7 +12,7 @@ description: 多个 AI 如何共享记忆、项目上下文和历史产出？对
 
 ## 一张图看懂多 AI 共享知识体系
 
-![多 AI 记忆与业务资产中心：智能体、访问与治理、三类权威存储、个人工作台](/images/agent-knowledge-architecture.svg)
+![多 AI 记忆与业务资产中心：智能体、访问与治理、三类权威存储、个人工作台](/images/shared-ai-memory-architecture-v3.svg)
 
 如果只能选一个平台，而且主要使用现成的云端 AI、经常产生报告和图片，优先考虑已经接入各工具的云盘，例如 Google Drive。如果还要做代码、Skill、自动化工作流和任务管理，再引入 GitHub 与数据库。Obsidian 是很好的个人知识工作台，但不是所有人的必选项。
 
