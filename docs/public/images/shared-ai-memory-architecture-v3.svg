@@ -21,6 +21,7 @@
 <g fill="#f4f8f3" stroke="#d2e0d3"><rect x="48" y="600" width="624" height="64" rx="8"/><rect x="48" y="674" width="624" height="64" rx="8"/><rect x="48" y="748" width="624" height="64" rx="8"/></g>
 <g font-size="21" font-weight="700"><text x="62" y="626">云盘 · Google Drive 等</text><text x="62" y="700">Git · GitHub / GitLab</text><text x="62" y="774">数据库 · Supabase / PostgreSQL</text></g>
 <g font-size="19" fill="#526b58"><text x="62" y="650">长期记忆 / 项目上下文 / 原始业务产出</text><text x="62" y="724">正式规则 / Skills / 代码与版本</text><text x="62" y="798">任务状态 / 结构化记忆 / 业务数据</text></g>
+<path d="M692 308H706V921H692" stroke="#65866e" stroke-width="2" stroke-dasharray="6 5" fill="none" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
 <path d="M360 823V856" stroke="#65866e" stroke-width="2" stroke-dasharray="6 5" fill="none" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
 <rect x="28" y="861" width="664" height="124" rx="12" fill="#f7f9f3" stroke="#8da993" stroke-width="1.6" stroke-dasharray="7 4"/>
 <text x="48" y="893" font-size="23" font-weight="700">可选增强服务 · 非必经层</text>
