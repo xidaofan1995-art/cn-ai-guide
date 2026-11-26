@@ -84,7 +84,7 @@ export default defineConfig({
             { text: '实测目录', link: '/tools/' },
             { text: '实测方法', link: '/tools/method' },
             { text: '海关数据选型实测', link: '/tools/trade-data' },
-            { text: '多 Agent 知识库选型', link: '/tools/obsidian-agent-knowledge' },
+            { text: '多 AI 共享记忆与归档', link: '/tools/obsidian-agent-knowledge' },
             { text: '展会洞察', link: '/tools/exhibition' }
           ]
         }
