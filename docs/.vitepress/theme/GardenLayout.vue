@@ -40,7 +40,7 @@ const stage = computed(() => {
 <template>
   <Layout>
     <template #nav-bar-title-before>
-      <span class="garden-logo" aria-hidden="true">✿</span>
+      <img :src="withBase('/brand/orange-explorer.svg')" width="34" height="34" alt="" aria-hidden="true" style="display:block;flex:0 0 34px;width:34px;height:34px;object-fit:contain;margin-right:8px" />
     </template>
     <template #nav-bar-content-after>
       <a class="garden-nav-cta" :href="withBase('/start/')">从零开始 <span aria-hidden="true">→</span></a>
