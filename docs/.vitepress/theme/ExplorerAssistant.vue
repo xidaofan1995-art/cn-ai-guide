@@ -35,7 +35,7 @@ const shortcuts = [entries[0], entries[2], entries[7], entries[8], entries[15]]
 const results = computed(() => {
   const q = query.value.trim().toLowerCase()
   if (!q) return shortcuts
-  const words = q.split(/[\\s，。！？、,!?]+/).filter(Boolean)
+  const words = q.split(/[\s，。！？、,!?]+/).filter(Boolean)
   return entries.map(e => {
     const corpus = (e.title + ' ' + e.tags).toLowerCase()
     const score = words.reduce((n, w) => n + (corpus.includes(w) ? 5 : 0), 0)
