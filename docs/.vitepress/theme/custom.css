@@ -943,3 +943,69 @@
   .garden-plot { grid-template-columns: minmax(0,1fr); grid-template-areas: "basics" "tests" "office" "export"; grid-template-rows: auto; }
 
 }
+
+
+/* Knowledge garden: interior pages */
+/* Paint only the documentation shell; preserve the homepage, article markup,
+   image/chart colors, and the five-entry navigation. No external assets. */
+.VPDoc {
+  background:
+    radial-gradient(ellipse 420px 270px at 96% 0%, rgba(232,244,230,.76), transparent 100%),
+    radial-gradient(ellipse 340px 190px at 4% 0%, rgba(250,237,219,.36), transparent 100%),
+    linear-gradient(180deg, #f9fbf7 0, #ffffff 310px);
+}
+.VPSidebar {
+  background: linear-gradient(155deg, #f3f8ef 0, #fafcf9 200px, #ffffff 520px);
+  border-right-color: #e5ece2;
+}
+.VPSidebar .VPSidebarItem.level-0 > .item > .text {
+  color: #344b39;
+}
+.VPSidebar .VPSidebarItem.is-active > .item > .link > .text {
+  color: var(--vp-c-brand-1);
+  font-weight: 650;
+}
+.VPDoc .vp-doc h1 {
+  padding-bottom: 14px;
+  background: linear-gradient(90deg, #83b58a 0%, #cfe2ca 100%) left bottom / 54px 3px no-repeat;
+}
+.VPDoc .vp-doc h2 {
+  border-top-color: #e4ece1;
+}
+.VPDoc .vp-doc th {
+  background-color: #edf5e9;
+  color: #344c39;
+}
+.VPDoc .vp-doc td, .VPDoc .vp-doc th {
+  border-color: #e1e9df;
+}
+.VPDoc .vp-doc blockquote {
+  border-left-color: #8db995;
+  background: #f5f9f2;
+  padding: 10px 15px;
+  border-radius: 0 8px 8px 0;
+}
+.VPDoc .VPDocAsideOutline .content {
+  border-left-color: #dbe7d8;
+}
+.VPDoc .VPDocAsideOutline .outline-title {
+  color: #344b39;
+}
+.VPDoc .VPDocFooter .pager-link {
+  background: linear-gradient(135deg, #f5f9f2, #fff 80%);
+  border-color: #e1e9df;
+}
+@media (max-width: 767px) {
+  .VPDoc {
+    background:
+      radial-gradient(ellipse 240px 160px at 100% 0%, rgba(232,244,230,.65), transparent 100%),
+      linear-gradient(180deg, #fafcf8, #fff 220px);
+  }
+  .VPDoc .vp-doc h1 {
+    padding-bottom: 12px;
+    background-size: 42px 3px;
+  }
+}
+@media print {
+  .VPDoc, .VPSidebar, .VPDoc .vp-doc blockquote, .VPDoc .vp-doc h1 { background: none; }
+}
