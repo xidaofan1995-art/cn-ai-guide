@@ -921,3 +921,62 @@
     transform: none;
   }
 }
+
+
+/* Explorer homepage refinement */
+.garden-method {
+  margin: 0 0 24px;
+  padding: 18px 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--garden-radius);
+  background: #fafcf9;
+}
+.garden-method-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-bottom: 13px;
+}
+.garden-method-head h2 { font-size: 17px; font-weight: 700; }
+.garden-method-head a, .garden-method-note a {
+  color: var(--vp-c-brand-1);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.garden-method-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 12px 18px;
+}
+.garden-method-grid li { display: flex; align-items: flex-start; gap: 8px; min-width: 0; }
+.garden-method-icon { display: inline-flex; flex: 0 0 21px; color: var(--vp-c-brand-1); margin-top: 2px; }
+.garden-method-icon svg { width: 21px; height: 21px; }
+.garden-method-grid strong { display: block; font-size: 13px; line-height: 1.5; }
+.garden-method-grid small { display: block; font-size: 12px; color: var(--vp-c-text-2); line-height: 1.65; margin-top: 3px; }
+.garden-method-note { color: var(--vp-c-text-2); font-size: 12px; line-height: 1.7; border-top: 1px solid var(--vp-c-divider); margin-top: 13px; padding-top: 10px; }
+.garden-method-note a { margin-left: 6px; white-space: nowrap; }
+@media (max-width: 920px) {
+  .garden-method-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 560px) {
+  .garden-plot {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    grid-template-areas: "basics tests" "office export";
+    grid-template-rows: auto auto;
+    gap: 10px;
+  }
+  .garden-cell { min-width: 0; padding: 12px; }
+  .garden-cell-desc { overflow-wrap: anywhere; }
+  .garden-cell-title { font-size: 17px; }
+  .garden-leaf { animation: none; }
+  .garden-method { padding: 15px 13px; }
+  .garden-method-grid { gap: 12px 8px; }
+  .garden-method-grid li { gap: 6px; }
+}
+@media (max-width: 350px) {
+  .garden-plot { grid-template-columns: minmax(0,1fr); grid-template-areas: "basics" "tests" "office" "export"; grid-template-rows: auto; }
+  .garden-method-grid { grid-template-columns: minmax(0,1fr); }
+}
