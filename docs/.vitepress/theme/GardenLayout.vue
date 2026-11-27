@@ -3,6 +3,7 @@ import DefaultTheme from 'vitepress/theme'
 import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
 import GrowthBadge from './GrowthBadge.vue'
+import ExplorerAssistant from './ExplorerAssistant.vue'
 import { maturity, type Maturity } from './maturity'
 
 const { Layout } = DefaultTheme
@@ -67,6 +68,7 @@ const stage = computed(() => {
           <span><a :href="withBase('/news/')">AI 资讯</a> · <a :href="withBase('/feedback/')">留言板</a> · <a :href="withBase('/about/')">关于网站</a></span>
         </div>
       </footer>
+      <ClientOnly><ExplorerAssistant /></ClientOnly>
     </template>
   </Layout>
 </template>
