@@ -224,3 +224,9 @@ updated_at: "2026-11-26"
 本文为方案研究，依据文中链接的官方文档及项目仓库（2026-11-26）。平台组合、治理流程和验收条件属于设计建议，尚未完成实际部署及跨端测试。原文以 Obsidian 同步选型为主，本次修订扩大为跨 AI 共享记忆与数据归档，保留原文章地址。
 
 [认识 Agent、CLI 和 MCP](../basics/concepts.md) · [个人数据安全三道门](../guides/data-security.md) · [返回工具选型目录](./index.md)
+
+## 补充：一个对象只设一个权威源
+
+不要在五个平台同时保存同一份可编辑的正式决策。个人起步可选已有云盘作为原始文件中心，Notion作为人读编辑和审阅层，Git保存正式代码与规则；结构化业务状态频繁变化时才考虑数据库，检索索引可按权威文件重建。Obsidian可作为可选的本地工作台。这个组合是设计建议，未测量跨Agent同步性能。
+
+[内容发布架构](../topics/content-publishing.md) · [RAG原理](../topics/rag-explained.md) · [跨端协作](../topics/mobile-desktop.md)

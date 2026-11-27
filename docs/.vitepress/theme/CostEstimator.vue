@@ -1,0 +1,10 @@
+<script setup>
+import { ref, computed } from 'vue'
+const n=ref(1000), input=ref(3000), output=ref(500), pi=ref(10), po=ref(30), retry=ref(10), subscription=ref(100), device=ref(3000), months=ref(36), watts=ref(100), hours=ref(80), electricity=ref(0.8), maintenance=ref(0)
+const val=x=>Math.max(0,Number(x)||0)
+const api=computed(()=>val(n.value)*(1+val(retry.value)/100)*(val(input.value)*val(pi.value)+val(output.value)*val(po.value))/1000000)
+const local=computed(()=>val(device.value)/Math.max(1,val(months.value))+val(watts.value)/1000*val(hours.value)*val(electricity.value)+val(maintenance.value))
+const fields=[['月任务数',n],['单次输入 token',input],['单次输出 token',output],['输入价格（元/百万token）',pi],['输出价格（元/百万token）',po],['额外请求比例 %',retry],['订阅月费（元）',subscription],['设备成本（元）',device],['折旧月数',months],['功率 W',watts],['每月使用小时',hours],['电价 元/kWh',electricity],['维护月费（元）',maintenance]]
+</script>
+<template><section class="estimator"><h3>月度费用估算</h3><p>可修改全部假设。单位人民币，不代表实时厂商价格。</p><div class="inputs"><label v-for="[name, v] in fields" :key="name">{{ name }}<input type="number" min="0" step="any" :value="v.value" @input="v.value=Number($event.target.value)" /></label></div><div class="results"><div>订阅<strong>¥{{ val(subscription).toFixed(2) }}</strong></div><div>API<strong>¥{{ api.toFixed(2) }}</strong></div><div>本地<strong>¥{{ local.toFixed(2) }}</strong></div></div><small>仅作月成本情景计算。不含额外工具费、税、质量差异与人工核验；请填写实际价格。</small></section></template>
+<style scoped>.estimator{background:#f7faf6;border:1px solid #dce5d9;padding:18px;border-radius:12px;margin:20px 0}.inputs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.inputs label{display:grid;gap:4px;font-size:13px}.inputs input{border:1px solid #b9cbb9;border-radius:6px;padding:6px;width:100%;background:white;color:#233a28}.results{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}.results>div{padding:10px;background:white;border:1px solid #dce5d9;border-radius:8px}.results strong{display:block;color:#396b42;font-size:20px}@media(max-width:480px){.inputs{grid-template-columns:1fr}.results{grid-template-columns:1fr}}</style>

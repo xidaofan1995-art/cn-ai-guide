@@ -89,3 +89,7 @@ import ModelExamples from '../.vitepress/theme/ModelExamples.vue'
   .model-map { grid-template-columns: 1fr; }
 }
 </style>
+
+## 选型时别漏掉可用性与业务约束
+
+模型家族、网页产品、API端点及可下载权重是四个不同层次。使用时应记录具体型号、时间和入口。普通人先看实际工作能否完成；产品经理同时核查API、费用、延迟、数据处理；企业还要确认网络可用性、合同与支付开票。原文同题结果是历史小样本，不能据此宣称某家族整体优胜。进一步理解：[全球AI模型地图](../topics/global-models.md)、[模型盲评练习](../topics/model-experiment.md)、[AI成本计算器](../topics/ai-cost.md)。

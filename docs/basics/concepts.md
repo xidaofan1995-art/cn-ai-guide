@@ -29,3 +29,18 @@ maturity: seed
 你可以在终端用 CLI 启动一个 Agent。Agent 负责安排步骤，可以通过应用已配置的 MCP 连接读取数据，再把模型提取出的字段汇总成草稿。这三样可以配合使用。手头只有一份表时，用网页对话也能先把流程跑清楚。
 
 试新工具时，可以只给它一份可公开的样例和需要的读取权限，把核对、保存和对外发信留给自己确认。想看实际界面和规范，可读 [Hermes 的 CLI 文档](https://hermes-agent.nousresearch.com/docs/user-guide/cli)和 [MCP 规范的介绍](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/docs/2026-07-28/getting-started/intro.mdx)。
+
+## 30秒看懂从回答到执行
+
+![聊天、工具、执行、协作四层能力](/images/topics-a03.svg)
+
+| 层级 | 对同一份展会记录做什么 | 是否适合 |
+| --- | --- | --- |
+| 聊天 | 给出整理建议与草稿 | 只需判断、改稿 |
+| 工具辅助 | 按授权检索或计算 | 需要外部证据 |
+| Agent | 读取文件、执行多步、检查状态 | 输入输出明确且可验收 |
+| 多角色工作流 | 分工、独立审核、归档和重试 | 需要权限隔离或复核 |
+
+这是能力层级示意，不是严格产品分类，也不是实际运行测试。外部行动必须有可追溯的结果、权限及失败处理。对于发送邮件、付款、删除、正式发布等副作用，先生成草稿并由人批准，不能把流畅的回答当成任务已经执行成功。
+
+[多Agent工作流](../topics/multi-agent-workflow.md) · [MCP连接协议](../topics/mcp-explained.md) · [自动化价值判断](../topics/workflow-roi.md)
