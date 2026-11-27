@@ -950,6 +950,7 @@
    image/chart colors, and the five-entry navigation. No external assets. */
 .VPDoc {
   background:
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cg%20fill%3D%22%2391b78a%22%20opacity%3D%22.16%22%3E%3Cpath%20d%3D%22M46%2070Q16%2064%2013%2035Q38%2034%2046%2070Z%22%2F%3E%3Cpath%20d%3D%22M50%2059Q50%2023%2081%2016Q86%2047%2050%2059Z%22%2F%3E%3Cpath%20d%3D%22M41%2048Q17%2029%2031%209Q53%2023%2041%2048Z%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M39%2089Q55%2059%2047%2037%22%20fill%3D%22none%22%20stroke%3D%22%2391b78a%22%20stroke-opacity%3D%22.19%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E") right 24px top 20px / 88px 88px no-repeat,
     radial-gradient(ellipse 420px 270px at 96% 0%, rgba(232,244,230,.76), transparent 100%),
     radial-gradient(ellipse 340px 190px at 4% 0%, rgba(250,237,219,.36), transparent 100%),
     linear-gradient(180deg, #f9fbf7 0, #ffffff 310px);
