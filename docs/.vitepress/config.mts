@@ -51,6 +51,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'AI 基础', link: '/basics/', activeMatch: '^/(basics|start|models|compare|guides)/' },
+      { text: '知识专题', link: '/topics/', activeMatch: '^/topics/' },
       { text: '工具实测', link: '/tools/', activeMatch: '^/tools/' },
       { text: '实战案例', link: '/scenarios/', activeMatch: '^/scenarios/' },
       { text: '提示词库', link: '/prompts/', activeMatch: '^/prompts/' },
@@ -59,6 +60,7 @@ export default defineConfig({
       { text: '关于网站', link: '/about/', activeMatch: '^/about/' }
     ],
     sidebar: {
+      '/topics/': [{ text: '知识专题', items: [{ text: '专题目录', link: '/topics/' }, { text: 'B06 Notion、GitHub与独立站的三层内容架构', link: '/topics/content-publishing' }, { text: 'B07 数据敏感度、硬件预算与最小离线验证', link: '/topics/local-llm' }, { text: 'B02 从单Agent到多角色协作的最小闭环', link: '/topics/multi-agent-workflow' }, { text: 'B05 用频率、节省时间、风险和验收成本决定是否自动化', link: '/topics/workflow-roi' }, { text: 'C01 从阶段交付物、决策门和真实验证理解硬件研发', link: '/topics/hardware-development' }, { text: 'D02 不以名单数量取胜，而以可核验的采购匹配为目标', link: '/topics/overseas-lead-workflow' }, { text: 'E04 来源、口径、复算与结论四道检查', link: '/topics/chart-quality' }] }],
       '/basics/': basicsSidebar,
       '/models/': basicsSidebar,
       '/start/': basicsSidebar,
