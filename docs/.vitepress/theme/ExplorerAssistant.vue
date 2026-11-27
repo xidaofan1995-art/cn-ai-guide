@@ -9,6 +9,7 @@ const open = ref(false)
 const hidden = ref(false)
 const still = ref(false)
 const moving = ref(false)
+const scrolling = ref(false)
 const query = ref('')
 const trigger = ref<HTMLButtonElement>()
 const input = ref<HTMLInputElement>()
@@ -47,6 +48,7 @@ let timer: ReturnType<typeof setTimeout> | undefined
 let endTimer: ReturnType<typeof setTimeout> | undefined
 let loadTimer: ReturnType<typeof setTimeout> | undefined
 let lastScroll = 0
+let scrollTimer: ReturnType<typeof setTimeout> | undefined
 let motion: MediaQueryList | undefined
 function stopMotion() {
   clearTimeout(timer); clearTimeout(endTimer); moving.value = false
@@ -60,7 +62,14 @@ function schedule() {
     endTimer = setTimeout(schedule, 650)
   }, 18000 + Math.random() * 12000)
 }
-function scroll() { lastScroll = Date.now(); if (moving.value) schedule() }
+function scroll() {
+  lastScroll = Date.now()
+  if (moving.value) schedule()
+  if (open.value) return
+  scrolling.value = true
+  clearTimeout(scrollTimer)
+  scrollTimer = setTimeout(() => { scrolling.value = false }, 750)
+}
 function save() {
   try { localStorage.setItem('garden-explorer-v1', JSON.stringify({ hidden: hidden.value, still: still.value })) } catch {}
 }
@@ -69,6 +78,7 @@ function close(focus = false) {
   if (focus) nextTick(() => trigger.value?.focus())
 }
 function toggle() {
+  clearTimeout(scrollTimer); scrolling.value = false
   if (open.value) close(true)
   else { open.value = true; nextTick(() => input.value?.focus()) }
 }
@@ -99,7 +109,7 @@ onMounted(() => {
   else window.addEventListener('load', initialize, { once: true })
 })
 onUnmounted(() => {
-  stopMotion(); clearTimeout(loadTimer)
+  stopMotion(); clearTimeout(loadTimer); clearTimeout(scrollTimer)
   motion?.removeEventListener('change', schedule)
   document.removeEventListener('visibilitychange', schedule)
   document.removeEventListener('keydown', keydown)
@@ -107,12 +117,12 @@ onUnmounted(() => {
   window.removeEventListener('load', initialize)
 })
 watch([open, hidden, still], schedule)
-watch(() => route.path, () => { close(); query.value = '' })
+watch(() => route.path, () => { close(); query.value = ''; scrolling.value = false; clearTimeout(scrollTimer) })
 </script>
 
 <template>
   <Teleport to="body">
-    <aside v-if="ready" class="explorer" aria-label="桔子哥网站助手">
+    <aside v-if="ready" class="explorer" :class="{ 'is-scrolling': scrolling && !open && !hidden }" aria-label="桔子哥网站助手">
       <button v-if="hidden" class="wake" type="button" @click="wake">唤醒桔子哥</button>
       <template v-else>
         <section v-if="open" id="explorer-panel" class="panel" aria-label="桔子哥站内导览" role="region">
@@ -150,6 +160,8 @@ watch(() => route.path, () => { close(); query.value = '' })
 .explorer{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));z-index:35;display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-family:var(--vp-font-family-base);color:#35433a;max-width:calc(100vw - 24px);pointer-events:none}
 .explorer>*{pointer-events:auto}
 .launcher{display:flex;align-items:center;flex-direction:column;gap:1px;border:0;padding:3px 6px 4px;cursor:pointer;background:transparent;touch-action:manipulation}
+.launcher{transition:opacity .18s ease}
+.explorer.is-scrolling .launcher:not(:focus-visible){opacity:.16;pointer-events:none}
 .launcher img{width:auto;height:104px;object-fit:contain;transform-origin:50% 95%;filter:drop-shadow(0 3px 4px #3c40231f)}
 .launcher span,.wake{font-size:11px;line-height:1.4;color:#415540;background:#fffdf6;border:1px solid #dce2d3;border-radius:20px;padding:4px 9px;box-shadow:0 2px 7px #31422b12}
 .launcher:focus-visible,.explorer button:focus-visible,.explorer a:focus-visible,.explorer input:focus-visible{outline:2px solid #73946d;outline-offset:2px}
