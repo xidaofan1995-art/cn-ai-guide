@@ -106,20 +106,6 @@ const updates = [
       </div>
     </section>
 
-    <section class="garden-method" aria-labelledby="garden-method-title">
-      <div class="garden-method-head">
-        <h2 id="garden-method-title">我们如何研究 AI</h2>
-        <a :href="withBase('/tools/method.html')">查看实测与研究方法 <span aria-hidden="true">→</span></a>
-      </div>
-      <ul class="garden-method-grid">
-        <li><span class="garden-method-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="5" rx="1"/><path d="M12 8v4M5 15v-3h14v3"/><rect x="2" y="15" width="6" height="6" rx="1"/><rect x="16" y="15" width="6" height="6" rx="1"/></svg></span><div><strong>全景研究</strong><small>先看体系，再深入细节</small></div></li>
-        <li><span class="garden-method-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v7L4 19a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3M8 15h8"/></svg></span><div><strong>同题实测</strong><small>相同任务，比较实际差异</small></div></li>
-        <li><span class="garden-method-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H5v18h14V8zM14 3v5h5M8 14l3 3 5-5"/></svg></span><div><strong>证据可溯</strong><small>注明来源，区分事实与推断</small></div></li>
-        <li><span class="garden-method-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l4 4M4 20l3-1 12-12a2.8 2.8 0 0 0-4-4L3 15l-1 5zM12 20h9"/></svg></span><div><strong>真实实践</strong><small>从业务问题出发，验证结果</small></div></li>
-      </ul>
-      <p class="garden-method-note">资料研究、实测与演示明确区分；来源、核实时间及限制随内容说明。<a :href="withBase('/about/')">了解本站原则</a></p>
-    </section>
-
     <section class="garden-legend garden-rise garden-delay-3" aria-labelledby="garden-legend-title">
       <div class="garden-legend-intro">
         <h2 id="garden-legend-title">每篇文章都有成熟度</h2>
