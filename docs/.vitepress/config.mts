@@ -44,6 +44,7 @@ export default defineConfig({
   base,
   appearance: false,
   head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}brand/orange-explorer.svg` }],
     ['meta', { name: 'color-scheme', content: 'light' }],
     ['link', { rel: 'preload', as: 'font', type: 'font/woff2', href: `${base}fonts/noto-serif-sc.woff2`, crossorigin: 'anonymous' }]
   ],
