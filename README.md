@@ -5,6 +5,10 @@
 - 网站：https://xidaofan1995-art.github.io/cn-ai-guide/
 - 项目进度：见 [ROADMAP.md](ROADMAP.md)
 
+## 项目规范
+
+- [长期产品与内容原则（AGENTS.md）](AGENTS.md)：业务场景优先、精选而非收录、对比而非罗列、缺口驱动开发、结果导向。
+
 ## 本地运行
 
 ```sh
